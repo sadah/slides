@@ -11,13 +11,13 @@
 * <a href="http://sadah.github.com" target="_blank">sadah.github.com</a> / <a href="http://twitter.com/sada_h" target="_blank">@sada_h</a> / <a href="http://d.hatena.ne.jp/j7400157" target="_blank">techlog</a>
 * Kamakura, Born in 1981.
 * Ruby / Rails / HTML5 / JavaScript / Java
-* Kakaku.com, Inc. Engineer
+* Kakaku.com, Inc. Engineer 2012/08〜
     * <a href="http://tabelog.com/" target="_blank">グルメ・レストランガイド [食べログ]</a>
     * <a href="http://yoyaku.tabelog.com/" target="_blank">レストラン予約サイト [cena(チェーナ)]</a>
 
-[<img src="images/profile.jpg" alt="ひらい さだあき" style="max-width:100px;vertical-align:middle;" />](http://twitter.com/sada_h)
-[<img src="images/tabelog.gif" alt="食べログ" style="vertical-align:middle;" />](http://tabelog.com)
-[<img src="images/cena.png" alt="レストラン予約サイト cena(チェーナ)" style="vertical-align:middle;background-color:#fff;" />](http://yoyaku.tabelog.com)
+<a href="http://twitter.com/sada_h" target="_blank"><img src="images/profile.jpg" alt="ひらい さだあき" style="max-width:100px;vertical-align:middle;" /></a>
+<a href="http://tabelog.com" target="_blank"><img src="images/tabelog.gif" alt="食べログ" style="vertical-align:middle;" /></a>
+<a href="http://yoyaku.tabelog.com" target="_blank"><img src="images/cena.png" alt="レストラン予約サイト cena(チェーナ)" style="vertical-align:middle;background-color:#fff;" /></a>
 
 
 
@@ -102,40 +102,48 @@ HTML5なマークアップはけっこう見かける。
 
 * <a href="http://www.muji.net/" target="_blank">無印良品</a>
 * <a href="http://www.apple.com/" target="_blank">Apple</a>
-* <a href="http://www.lawson.co.jp/index.html" target="_blank">マチのほっとステーション LAWSON｜ローソン</a>
-* <a href="http://www.united-arrows.co.jp/index.html" target="_blank">ユナイテッドアローズ公式サイト｜UNITED ARROWS LTD.</a>
-* <a href="http://www.beams.co.jp/" target="_blank">BEAMSオフィシャルサイト｜ビームス</a>
+* <a href="http://www.lawson.co.jp/index.html" target="_blank">LAWSON｜ローソン</a>
+* <a href="http://www.united-arrows.co.jp/index.html" target="_blank">UNITED ARROWS LTD.</a>
+* <a href="http://www.beams.co.jp/" target="_blank">BEAMSオフィシャルサイト</a>
 
 spec
 
 * <a href="http://www.w3.org/TR/html5/" target="_blank">HTML5</a> / <a href="http://www.w3.org/TR/html51/" target="_blank">HTML 5.1</a>
 
 
-
 ## HTML5 Markup
-まずは doctype を書き換えて、フォールバックを入れておくのはいいかも。
+html5shiv使ったり、createElementしたりで、フォールバック。
 
-    <!--[if IE]><script src="/js/lib/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+      <script src="dist/html5shiv.js"></script>
+    <![endif]-->
 
-    ["abbr", "article", "aside", "command", "details", "figcaption", "figure", "footer", "header", "hgroup", "mark", "meter", "nav", "output", "progress", "section", "summary", "time"]
-    document.createElement(e)
+    elements = "abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video".split(" ");
+    for(var i=0; i<elements.length; i++){
+      document.createElement(elements[i]);
+    }
 
-    "abbr,article,aside,audio,canvas,datalist,details,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video"
+* <a href="samples/markup.html">Sample: HTML5 fall back Sample</a>
 
 
 ## JavaScript
-windowオブジェクトはHTML5で定義された。
+Window / History / Location はHTML5で定義された。
 
 Thanks myakura!
 
 * <a href="http://www.w3.org/TR/html5/browsers.html#the-window-object" target="_blank">5.2 The Window object — HTML5</a>
+* <a href="http://www.w3.org/TR/html5/browsers.html#the-history-interface" target="_blank">5.5.2 The History interface</a>
+* <a href="http://www.w3.org/TR/html5/browsers.html#the-location-interface" target="_blank">5.5.3 The Location interface</a>
+
 
 Selectors APIはjQueryを使えば使ってる。
 
 * <a href="http://www.w3.org/TR/selectors-api/" target="_blank">Selectors API Level 1</a>
+* <a href="http://code.jquery.com/jquery-1.8.2.js" target="_blank">jquery-1.8.2.js</a>
 
-ま、もっといろいろあるのは分かるけど、身近なものってことで。
+ま、もっといろいろあるけど…。
 
+関係ないけど、ECMAScript 6 追えてない…。
 
 
 ## WebStorage
@@ -154,43 +162,90 @@ HTML5Rocksのサンプルなら…。
 * <a href="http://www.html5rocks.com/ja/tutorials/indexeddb/todo/" target="_blank">HTML5 の IndexedDB を使用した簡単な TODO リスト - HTML5 Rocks</a>
 
 
-## CSS3
-border-radius とか text-shadow はいろいろなサイトで使われてる。<a href="http://yoyaku.tabelog.com/" target="_blank">cena(チェーナ)</a>でも使ってる。積極的に使っていきたい。animationとかは、使わないけど。
+## WebStorage
 
-[![レストラン予約サイト cena(チェーナ)](images/cena.png)](http://yoyaku.tabelog.com)
+保存できるのは文字列のみ。
+ブラウザごとに異なるけど、保存できる最大サイズは5MB程度が目安。
+超えると QUOTA_EXCEEDED_ERR が発生する。
+保存は同期処理なので、待ちが発生するから気をつけて。
+
+    localStorage.setItem("key","text");
+    text = localStorage.getItem("key");
+
+    sessionStorage.setItem("key",text);
+    text = sessionStorage.getItem("key");
+
+* <a href="samples/webstorage.html">Sample: WebStorage Sample</a>
+
+
+## CSS3 Backgrounds, Borders
+
+border-radius とか text-shadow はいろいろなサイトで使われてる。
+<a href="http://yoyaku.tabelog.com/" target="_blank">cena</a>でも使ってる。積極的に使っていきたい。
+transform / transition / animation はあまり使わないかも。
+
+<a href="http://yoyaku.tablog.com" target="_blank"><img src="images/cena.png" alt="レストラン予約サイト cena(チェーナ)" style="vertical-align:middle;background-color:#fff;" /></a>
 
 * <a href="http://www.modern.ie/" target="_blank">Home | Testing made easier in Internet Explorer | modern.IE</a>
-* <a href="http://www.browserstack.com/start" target="_blank">Dashboard</a>
 * <a href="http://www.browserstack.com/" target="_blank">BrowserStack Cross Browser Testing Tool. 100+ Browsers, Mobile, Real IE.</a>
 * <a href="https://browserlab.adobe.com/ja-jp/" target="_blank">Adobe® BrowserLab</a>
 
+spec
+
+* <a href="http://www.w3.org/TR/css3-background/" target="_blank">CSS Backgrounds and Borders Module Level 3</a>
+* <a href="http://www.w3.org/TR/css3-transforms/" target="_blank">CSS Transforms</a>
+* <a href="http://www.w3.org/TR/css3-animations/" target="_blank">CSS Animations</a>
+
+
+## CSS3 Backgrounds, Borders
+
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 10px #aaa;
+    text-shadow: 5px 5px 5px #aaa;
+
+* <a href="samples/webstorage.html">Sample: CSS3 Backgrounds, Borders</a>
+
+関係ないけど CSS Variables が気になる。調べてないけど。
+
+* <a href="http://www.w3.org/TR/css-variables/" target="_blank">Sample: CSS Variables Module Level 1</a>
 
 
 ## MediaQueries
 たくさん見かける、見つかる。
 
 * <a href="http://www.w3.org/" target="_blank">World Wide Web Consortium (W3C)</a>
-* <a href="http://sadah.github.com" target="_blank">sadah.github.com</a>
 * <a href="http://www.microsoft.com/ja-jp/default.aspx" target="_blank">日本マイクロソフト│Microsoft Japan</a>
 * <a href="http://www.nttdata.com/jp/ja/index.html" target="_blank">NTTデータ</a>
-いろいろ。
+
+bookmarklet とか、いろいろ。
+
 * <a href="http://mediaqueri.es/" target="_blank">Media Queries</a>
 * <a href="http://lab.maltewassermann.com/viewport-resizer/" target="_blank">Responsive design testing tool – Viewport Resizer – Device simulation tool</a>
-
+* <a href="http://mattkersley.com/responsive/" target="_blank">Responsive Design Testing</a>
 
 
 ## MediaQueries
+
+    @media screen and (max-width: 479px) {
+      .media-test { color: red; }
+    }
+    @media screen and (min-width: 480px) and (max-width: 1023px) {
+      .media-test { color: blue; }
+    }
+    @media screen and (min-width: 1024px) {
+      .media-test { color: green;}
+    }
+
+* <a href="samples/mediaqueries.html">Sample: MediaQueries</a>
+
 サイトをリニューアルするときは検討してもいいかも。
+僕のシンプルなサイトでさえ、確認が大変でちょっと泣けた。CSS力が低いせいだけど。
 
-僕のシンプルなサイトでさえ、確認が大変でちょっと泣けた。CSS力が低いせいもあるけど。
-
+* <a href="http://sadah.github.com" target="_blank">sadah.github.com</a>
 
 コーポレートサイトや、静的なサイトにはいいかも。
-
 食べログのようなWebアプリケーションには向かないかも。PCとスマホで必要となる機能が違うから。
-
 PCとスマホで利用シーンが全く異なる。
-
 
 
 ## WebFonts
@@ -199,40 +254,101 @@ PCとスマホで利用シーンが全く異なる。
 * <a href="http://www.beams.co.jp/" target="_blank">BEAMSオフィシャルサイト｜ビームス</a>
 * <a href="http://www.nttdata.com/jp/ja/index.html" target="_blank">NTTデータ</a>
 * <a href="http://webfont.fontplus.jp/" target="_blank">FONTPLUS｜フォントプラス</a>
+
+僕も使ってる。
+
 * <a href="http://sadah.github.com" target="_blank">sadah.github.com</a>
+* <a href="http://sadah.github.com/sada-samplecode/FontsCompare/" target="_blank">Google Web Fonts Compare</a>
+
+
+## WebFonts
+
+    /* using Google Web Fonts */
+    @font-face {
+      font-family: 'Allerta Stencil';
+      src: url(http://themes.googleusercontent.com/static/fonts/allertastencil/v4/CdSZfRtHbQrBohqmzSdDYKqcRvMv63bhrwdN_8Hu8N8.woff) format('woff');
+    }
+
+    .webfonts{
+      font-family: 'Allerta Stencil', sans-serif;
+    }
+
+* <a href="samples/webfonts.html">Sample: WebFonts</a>
+* <a href="http://www.atmarkit.co.jp/fwcr/design/tool/webfonts01/01.html" target="_blank">インストールせずに、好きなWeb Fontsを使おう ─ ＠IT</a>
+
+これらの Extension いれるといろいろ便利。
+
+* <a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm" target="_blank">Chrome ウェブストア - WhatFont</a>
+* <a href="https://chrome.google.com/webstore/detail/google-font-previewer-for/engndlnldodigdjamndkplafgmkkencc" target="_blank">Chrome ウェブストア - Google Font Previewer for Chrome</a>
 
 
 
 ## Canvas
-Canvas はGoogleMapsで使われてる。Thanks komasshu!
-
+Canvas はGoogleMapsで使われてる。Thanks komasshu !
 あとはプロフィール画像の切り出しとか。見つけられなかったけど。
 
-* <a href="http://www.w3.org/TR/2dcontext/" target="_blank">HTML Canvas 2D Context</a>
 * <a href="https://maps.google.co.jp/maps?saddr=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C+%E9%8E%8C%E5%80%89%E9%A7%85&daddr=%E5%AE%AE%E5%B4%8E%E7%9C%8C+%E5%AE%AE%E5%B4%8E%E9%A7%85&ie=UTF8&dirflg=t&ttype=now&t=m&z=7&start=0&geocode=FffsGgId719RCCnfc08qwkUYYDEODvuEPjrpxw%3BFS_-5gEdYn7VBymJj9bEXLc4NTHEGuIFnPgASw&brcurrent=3,0x34674e0fd77f192f:0xf54275d47c665244,1" target="_blank">鎌倉から宮崎 / Google Maps</a>
 * <a href="http://jp.wsj.com/public/npage/japan-market-data-center.html?mod=WSJJP_topnav_jp_market" target="_blank">マーケットデータ／海外市況-マーケット情報-WSJ日本版 - jp.WSJ.com - Wsj.com</a>
 
+spec
+
+* <a href="http://www.w3.org/TR/2dcontext/" target="_blank">HTML Canvas 2D Context</a>
 
 
-## Video
-自分でやると、いろんな形式のファイルを用意するのが大変そう…。
+## Canvas
 
-* <a href="http://www.youtube.com/html5" target="_blank">YouTube - HTML5</a>
-* <a href="http://www.youtube.com/watch?v=rr7-Fl3OIGo" target="_blank">はじめてのiBooks Author - 第26回HTML5とか勉強会 - YouTube</a>
+    var ctx = $("#canvas-area")[0].getContext("2d");
+    // x, y, radius, startAngle, endAngle [, anticlockwise ] )
+    ctx.arc(200, 100, 50, 0, Math.PI*2, false);
+    ctx.stroke();
 
+* <a href="samples/canvas.html">Sample: Canvas</a>
+
+とりあえず、円を描く。
+
+
+## Canvas + WebFonts
+
+    ctx.fillStyle = "navy";
+    ctx.font = "72px 'Cabin Sketch', cursive";
+    ctx.fillText("WebFonts", 200 , 50);
+
+* <a href="samples/webfonts.html">Sample: Canvas + WebFonts</a>
+
+CanvasでWebFontsも使える。
+WebFontsは、利用されるときにダウンロードされるので、なにもしないと最初の1回はフォントが適用されない。
+WebFont Loader 使いましょう。
+
+* <a href="https://developers.google.com/webfonts/docs/webfont_loader?hl=ja" target="_blank">WebFont Loader - Google Web Fonts — Google Developers</a>
 
 
 ## SVG
-思った以上に、いろいろなところで使われていた。Thanks Daniel, wks, myakura.
+思った以上に、いろいろなところで使われていた。画像、図、グラフの代わりに。ロゴとか、拡大縮小されるところに使いたい。
+Thanks Daniel, wks, myakura.
 
-* <a href="http://newsapps.wsj.com/elections2010/#race=senate" target="_blank">Election 2010 - Results State-by-State - Senate, House, Governors - Infographic -- The Wall Street Journal Online</a>
+* <a href="http://newsapps.wsj.com/elections2010/#race=senate" target="_blank">Election 2010 - The Wall Street Journal Online</a>
 * <a href="http://raphaeljs.com/" target="_blank">Raphaël—JavaScript Library</a>
 * <a href="http://www.nytimes.com/" target="_blank">The New York Times</a>
 * <a href="http://www.apple.com/jp/" target="_blank">アップル</a>
 
 
+## SVG
+    <svg width="800" height="300">
+      <circle cx="150" cy="150" r="100" stroke="blue" fill="white" stroke-width="5"/>
+    </svg>
 
-## Microdata
+    <img src="image.svg">
+
+* <a href="samples/svg.html">Sample: SVG</a>
+* <a href="samples/svg_webfonts.html">Sample: SVG + WebFonts</a>
+
+Raphaël使うと…
+
+* <a href="http://raphaeljs.com/australia.html" target="_blank">Raphaël · Australia</a>
+* <a href="http://raphaeljs.com/text-rotation.html" target="_blank">Raphaël · Text Rotation</a>
+
+
+## microdata
 調べてみたら、とても身近だった。
 
 * <a href="http://www.barackobama.com/" target="_blank">Barack Obama</a>
@@ -242,6 +358,24 @@ Canvas はGoogleMapsで使われてる。Thanks komasshu!
 * <a href="http://www.google.com/webmasters/tools/richsnippets" target="_blank">Google Structured Data Testing Tool</a>
 * <a href="https://www.google.co.jp/search?q=%E3%83%A9%E3%82%B7%E3%82%A8%E3%83%83%E3%83%88" target="_blank">ラシエット - Google 検索</a>
 
+
+## microdata
+
+    <div itemscope itemtype="http://data-vocabulary.org/Person">
+      私の名前は<span itemprop="name">ひらい さだあき</span>ですが、
+      みんなから「<span itemprop="nickname">さだ</span>」と呼ばれています。
+      私のホームページは、
+      <a href="http://sadah.github.com" itemprop="url">sadah.github.com</a> です。
+      鎌倉に住んでおり、<span itemprop="title">エンジニア</span>として
+      <span itemprop="affiliation">カカクコム</span>に勤めています。
+    </div>
+
+* <a href="samples/microdata.html">Sample: microdata</a>
+
+こちらを参考に。
+
+* <a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&answer=176035" target="_blank">microdata について - ウェブマスター ツール ヘルプ</a>
+* <a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&answer=146646" target="_blank">リッチ スニペット - 人物 - ウェブマスター ツール ヘルプ</a>
 
 
 ## custome data attributes
@@ -253,8 +387,8 @@ Canvas はGoogleMapsで使われてる。Thanks komasshu!
 
 
 
-## data url scheme
-画像を埋め込んだり。Thanks Daniel.
+## data URL Scheme
+画像を埋め込んだり。
 
 * <a href="http://staff.hatenablog.com/" target="_blank">はてなブログ開発ブログ</a>
 * <a href="http://www.apple.com/jp/" target="_blank">アップル</a>
@@ -263,12 +397,17 @@ Canvas はGoogleMapsで使われてる。Thanks komasshu!
 http://en.wikipedia.org/wiki/Data_URI_scheme
 
 
+## Video
+自分でやると、いろんな形式のファイルを用意するのが大変そう…。
+
+* <a href="http://www.youtube.com/html5" target="_blank">YouTube - HTML5</a>
+* <a href="http://www.youtube.com/watch?v=rr7-Fl3OIGo" target="_blank">はじめてのiBooks Author - 第26回HTML5とか勉強会 - YouTube</a>
+
 
 ## FullScreenAPI
-実用的か微妙な気がするけど、最近見かける。MacだといいけどWindowだといまいちかも。
+実用的か微妙な気がするけど、たまに見かける。MacだといいけどWindowだといまいちかも。
 
-* <a href="http://www.flickr.com/photos/j7400157/8295130427/in/set-72157632304726387" target="_blank">IMG_8054 | Flickr - Photo Sharing!</a>
-
+* <a href="http://www.flickr.com/photos/j7400157/8295130427/in/set-72157632304726387" target="_blank">Flickr - Photo Sharing!</a>
 
 
 ## History API
@@ -286,44 +425,52 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
 
 ## Performance
-Navigation Timingとか link prefetch とか script defer async とか。
+Navigation Timingとか。
 
 * <a href="http://www.w3.org/TR/navigation-timing/" target="_blank">Navigation Timing</a>
 * <a href="http://web-tan.forum.impressrd.jp/e/2013/01/29/14562" target="_blank">【これは便利】あなたのWebサイト表示のどこが遅いかを一発で調べるブックマークレット | Web担当者Forum</a>
+
+
+link prefetch とか script defer async とか。
 
 * <a href="http://www.w3.org/TR/html5/links.html#link-type-prefetch" target="_blank">4.12 Links — HTML5</a>
 *  <a href="http://www.w3.org/TR/html5/scripting-1.html#attr-script-async" target="_blank">4.3 Scripting — HTML5</a>
 
 
-HTML5じゃないけど。
+## Performance
+HTML5じゃないけど、HTTP 2.0 とか SPDY とか。
 
 * <a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-01" target="_blank">draft-ietf-httpbis-http2-01 - Hypertext Transfer Protocol version 2.0</a>
 * <a href="http://www.chromium.org/spdy" target="_blank">SPDY - The Chromium Projects</a>
 * <a href="http://tools.ietf.org/html/draft-mbelshe-httpbis-spdy-00" target="_blank">draft-mbelshe-httpbis-spdy-00 - SPDY Protocol</a>
 
+
 ## まとめ
 
 フォールバックが面倒なものは、使わないほうが楽かも。
 勝手にフォールバックされるものはいいかも。
-モバイルファーストというかレガシーブラウザファーストなのかどうか
-プログレッシブ・エンハンスメントや、グレースフルデグラデーショション
 
 直感的な処理ができるようなところは、使っていくといいのかも。
-ドラッグアンドドロップやCanvasの画像のトリミングとか。
-
-doctypeを変える？
+Drag and Drop や Canvas の画像のトリミングとか。
 
 使えるところから使っていってもいいと思う。
+
+いっこでも、使えそうだって思えるものがあれば、幸いです。
+
+HTML5にはいろいろある。仕様が安定しているもの、そうじゃないもの。
 自分のサイトの特性を考えて、効果の高いところから。メリットの大きいところから。
-ちょっとずつ。大きなリニューアルがあれば、一気に。
+
+ちょっとずつ使う。大きなリニューアルがあれば、一気に使ってもいいと思う。
 
 
+**みんながハッピーになる？**
 
-**みんながハッピーになる？ Be Happy?**
+
+**みんながハッピーになるなら HTML5 で作りたい**
 
 
 ## The End
-### Thank you so much.
+### Thank you so mach.
 ### Familiar HTML5 <a href="http://twitter.com/sada_h">@sada_h</a>
-
+### http://bit.ly/h5m2013_sada_h
 
