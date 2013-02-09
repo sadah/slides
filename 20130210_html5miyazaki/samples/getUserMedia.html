@@ -41,7 +41,7 @@
       function(error) {console.log(error);}
     );
 
-    $('#v').bind('play',function(){
+    $('#v').on('play',function(){
       // autoplayされたらvideoのサイズとcanvasのサイズをあわせる
       c.width = v.videoWidth;
       c.height = v.videoHeight;
@@ -49,7 +49,7 @@
       doDraw(v, ctx);
     });
 
-    $('#c').click(function(){
+    $('#c').on("click", function(){
       var strDataURI = c.toDataURL('image/jpeg');
       $('#out').prepend("<div class='imgOut'>");
       $('.imgOut').append(

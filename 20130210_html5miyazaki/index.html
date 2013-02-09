@@ -386,7 +386,7 @@ WebStorage は Google や twitter で使われてる。
 
 ## CSS3 Backgrounds,Borders
 
-border-radius とか text-shadow はいろいろなサイトで使われてる。
+<span class="green">border-radius</span> とか <span class="green">text-shadow</span> はいろいろなサイトで使われてる。
 <a href="http://yoyaku.tabelog.com/" target="_blank">cena</a>でも使ってる。
 transform / transition / animation はあまり使わないかも。
 
@@ -394,7 +394,7 @@ transform / transition / animation はあまり使わないかも。
 * <a href="http://www.w3.org/TR/css3-transforms/" target="_blank">CSS Transforms</a>
 * <a href="http://www.w3.org/TR/css3-animations/" target="_blank">CSS Animations</a>
 
-様々なブラウザでの、確認はこれらがべんり。
+様々なブラウザでの確認は、こんなツールがべんり。
 
 * <a href="http://www.modern.ie/" target="_blank">modern.IE</a>
 * <a href="http://www.browserstack.com/" target="_blank">BrowserStack</a>
@@ -526,7 +526,10 @@ bookmarklet とか、いろいろ。
         <script type="text/template">
 
 ## Canvas
-Canvas はGoogleMapsで使われてる。Thanks komasshu !
+Canvas はGoogleMapsで使われてる。
+
+Thanks komasshu !
+
 あとはプロフィール画像の切り出しとか。見つけられなかったけど。
 
 * <a href="https://maps.google.co.jp/maps?saddr=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C+%E9%8E%8C%E5%80%89%E9%A7%85&daddr=%E5%AE%AE%E5%B4%8E%E7%9C%8C+%E5%AE%AE%E5%B4%8E%E9%A7%85&ie=UTF8&dirflg=t&ttype=now&t=m&z=7&start=0&geocode=FffsGgId719RCCnfc08qwkUYYDEODvuEPjrpxw%3BFS_-5gEdYn7VBymJj9bEXLc4NTHEGuIFnPgASw&brcurrent=3,0x34674e0fd77f192f:0xf54275d47c665244,1" target="_blank">鎌倉から宮崎 / Google Maps</a>
@@ -684,11 +687,11 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
       var reader = new FileReader();
       reader.onload = function() {
-        var result = reader.result;
+        var line = reader.result;
       }
       reader.readAsText(file[0], 'UTF-8');
 
-* <a href="samples/fullscreen.html" target="_blank">Sample: FullScreen API</a>
+* <a href="samples/dnd.html" target="_blank">Sample: Drag and Drop</a>
 
         </script>
       </section>
@@ -834,7 +837,11 @@ Drag and Drop や Canvas の画像のトリミングとか。
 
 仕様が安定しているもの、そうじゃないもの。
 
-自分のサイトの特性を考えて、効果の高いところから。メリットの大きいところから。使えるところから使っていってもいいと思う。
+自分のサイトの特性を考えて、効果の高いところから。
+
+メリットの大きいところから。
+
+使えるところから使っていけばいいと思う。
 
         </script>
       </section>
@@ -844,9 +851,11 @@ Drag and Drop や Canvas の画像のトリミングとか。
 
 ## まとめ
 
-ちょっとずつ使う。でも、大きなリニューアルがあれば、一気に使ってもいいと思う。
+ちょっとずつ使う。
 
-いっこでも、使えそうだって思えるものがあれば、幸いです。
+大きなリニューアルがあれば、一気に使ってもいい。
+
+使えそうなものが、ひとつでもあれば幸いです。
 
         </script>
       </section>
@@ -862,7 +871,7 @@ Drag and Drop や Canvas の画像のトリミングとか。
       <section data-markdown>
         <script type="text/template">
 
-**みんながハッピーになるなら<br><span class="yellow">HTML5</span> で作りたい**
+**みんながハッピーになるなら<br><span class="yellow">HTML5</span> で作りたい<br><span class="yellow">HTML5</span> を使いたい**
 
         </script>
       </section>
