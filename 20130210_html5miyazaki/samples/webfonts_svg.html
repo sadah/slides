@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WebFonts + SVG</title>
+  <link href="http://fonts.googleapis.com/css?family=Monofett" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script>
+  WebFontConfig = {
+    google: { families: [ 'Monofett', 'Cabin Sketch' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+  $(function(){
+    var svgChanged = false;
+    $("#svg-scale").on("click", function(){
+      if(!svgChanged){
+        $("#circlePath").attr("transform", "translate(40,40) scale(4)");
+        $("#gtext").attr("transform", "scale(1)");
+        svgChanged = true;
+      }else{
+        $("#circlePath").attr("transform", "translate(40,40) scale(2)");
+        $("#gtext").setAttribute("transform", "scale(1)");
+        svgChanged = false;
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+  <header><h1>WebFonts && SVG</h1></header>
+  <section>
+    <svg width="800" height="300">
+      <defs>
+        <path id="circlePath" transform="translate(40,40) scale(2)"
+        d="M 50 0
+        C 75 0  100 25 100 50
+        C 100 75 75 100 50 100
+        C 25 100 0 75 0 50
+        C 0 25 25 0 50 0
+        z" />
+      </defs>
+      <g id="gtext" fill="#009900">
+        <text x="10" y="10" font-size="56" font-family="Monofett">
+          <textPath xlink:href="#circlePath">Chrome+HTML5 Conference</textPath>
+        </text>
+      </g>
+      <use xlink:href="#circlePath" fill="none" stroke="red" />
+    </svg><br>
+    <button id="svg-scale">scale change</button>
+    <p style="font-size:smaller">see also <a href="http://gihyo.jp/dev/feature/01/svg/0003?page=2" target="_blank">スタートアップ SVG：第3回　少し高度なSVG｜gihyo.jp … 技術評論社</a></p>
+  </body>
+  </html>
