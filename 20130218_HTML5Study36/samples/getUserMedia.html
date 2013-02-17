@@ -15,7 +15,7 @@
         margin: 10px;
     }
     #info {
-        width: 600px;
+        width: 800px;
     }
     #out {
         width: 220px;
@@ -79,10 +79,14 @@
 <body>
   <h1>Sample: Video + Canvas + data URL Scheme + FullScreen</h1>
   <div id="info">
-      getUserMediaのサンプル。Chrome 21 over.<br>
-      カメラがついていれば、映像がでてくるはず。<br>
-      映像をクリックすると、画面をキャプチャします。<br>
-      via. <a href="http://people.opera.com/danield/presentations/getusermedia/#1" target="_blank">getUserMedia の基本</a> & <a href="http://people.opera.com/danield/webapps/getusermedia/" target="_blank">HTML5 Camera (getUserMedia example)</a><br>
+    <p>getUserMediaのサンプル。Chrome Only...</p>
+    <p>カメラがついていれば、映像がでてくるはず。映像をクリックすると、画面をキャプチャします。</p>
+    <p>
+    via. <br>
+    <a href="http://people.opera.com/danield/presentations/getusermedia/#1" target="_blank">getUserMedia の基本</a><br>
+    <a href="http://people.opera.com/danield/webapps/getusermedia/" target="_blank">HTML5 Camera (getUserMedia example)</a><br>
+    <a href="https://hacks.mozilla.org/2013/02/cross-browser-camera-capture-with-getusermediawebrtc/" target="_blank">Cross-browser camera capture with getUserMedia/WebRTC ✩ Mozilla Hacks</a>
+  </p>
   </div>
   <!-- video要素自体は display:none -->
   <video id='v' autoplay></video>
