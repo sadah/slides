@@ -6,12 +6,12 @@
   <meta name="description" content="It is not HTML5. but ... - HTML5じゃないサイトからHTML5を考える">
   <meta name="author" content="Sadaaki HIRAI">
 
-  <meta property='og:url' content='http://sadah.github.com/slides/20130210_HTML5Miyazaki/' />
+  <meta property='og:url' content='http://sadah.github.com/slides/20130218_HTML5Study36/' />
   <meta property='og:title' content='It is not HTML5. but ... - HTML5じゃないサイトからHTML5を考える' />
   <meta property='og:site_name' content='It is not HTML5. but ... - HTML5じゃないサイトからHTML5を考える' />
   <meta property='og:description' content='It is not HTML5. but ... - HTML5じゃないサイトからHTML5を考える' />
   <meta property='og:type' content='website' />
-  <meta property='og:image' content='http://sadah.github.com/slides/20130218_HTML5Study36/images/profile.jpg' />
+  <meta property='og:image' content='http://sadah.github.com/slides/20130218_HTML5Study36/images/top.jpg' />
   <meta property='og:locale' content='ja_JP' />
   <meta property="fb:admins" content="1704653307534" />
 
@@ -33,7 +33,6 @@
   html body {
     background:url("images/gplaypattern.png");
     background-repeat: repeat;
-    background-color: #000;
   }
 
   .reveal{
@@ -49,9 +48,9 @@
     font-family: "optima", "Belleza", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
     letter-spacing: 0em;
     text-transform: none;
-/*    text-shadow: 1px -1px rgba(0,0,0,1); */
-
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
   }
+
   .reveal h1{
     font-size: 2em;
   }
@@ -81,12 +80,6 @@
   .reveal .left p {
     text-align: left;
   }
-/**
-  .reveal pre {
-    font-size: 1em;
-    line-height: 1.2;
-  }
-*/
 
   .reveal blockquote {
     width: 90%;
@@ -95,6 +88,7 @@
 
   .reveal strong, .reveal b {
     font-size: 1.5em;
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
   }
 
   .blue {
@@ -116,24 +110,33 @@
     color: white;
   }
   .pink{
-    color: #EE4056;
+    color: #FF3399;
   }
 
-.reveal.fade .slides section,
-.reveal.fade .slides>section>section {
-    -webkit-transform: none;
-     -moz-transform: none;
-      -ms-transform: none;
-       -o-transform: none;
-          transform: none;
+  .last-cover{
+    position:fixed;
+    z-index: -1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    opacity:0.5;
+  }
 
-  -webkit-transition: opacity 0.5s;
-     -moz-transition: opacity 0.5s;
-      -ms-transition: opacity 0.5s;
-       -o-transition: opacity 0.5s;
-          transition: opacity 0.5s;
-}
-
+  #bg{
+    display: none;
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: url(images/l1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   </style>
 </head>
 <body>
@@ -146,9 +149,9 @@
 
 # <span class="yellow">It is not HTML5. but ...</span><br><small>HTML5ではないサイトから<br>HTML5を考える</small>
 
-### 第36回 HTML5とか勉強会<br>2013/02/18
+### <small>第36回 HTML5とか勉強会 - 2013/02/18</small>
 
-<a href="http://sadah.github.com" target="_blank">ひらい さだあき</a> <a href="http://twitter.com/sada_h">@sada_h</a>
+ <a href="http://sadah.github.com" target="_blank">ひらい さだあき</a> <a href="http://twitter.com/sada_h">@sada_h</a>
 
         </script>
       </section>
@@ -478,7 +481,7 @@ DevToolsを開くとすぐに分かる。
         </script>
       </section>
 
-      <section data-markdown class="left">
+      <section data-markdown>
         <script type="text/template">
 
 ## WebFonts
@@ -707,7 +710,7 @@ HTTP1.1時代の高速化。たとえば…。
         </script>
       </section>
 
-      <section data-markdown class="left">
+      <section data-markdown>
         <script type="text/template">
 
 ## Performance
@@ -751,25 +754,9 @@ SSLを使ったとしても、食べログのようにリクエストが多け�
       <section data-markdown>
         <script type="text/template">
 
-高速化の手法も、どんどん変わる。
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-
 CDN が SPDY or HTTP2.0 に対応してくれれば、試しやすい。
 
-        </script>
-      </section>
-
-      <section data-markdown class="left">
-        <script type="text/template">
-
-使うときはもちろん評価するけど、こういう技術があるって知らないと試せない。
-
-メリットやデメリットも、ある程度は知っておくといいよね。
+高速化の手法も、どんどん変わる。
 
         </script>
       </section>
@@ -790,6 +777,17 @@ CDN が SPDY or HTTP2.0 に対応してくれれば、試しやすい。
 
         </script>
       </section>
+
+      <section data-markdown class="left">
+        <script type="text/template">
+
+使うときはもちろん評価するけど、こういう技術があるって知らないと試せない。
+
+メリットやデメリットも、ある程度は知っておくといいよね。
+
+        </script>
+      </section>
+
 
       <section data-markdown>
         <script type="text/template">
@@ -849,9 +847,9 @@ HTML5のマークアップとか、MediaQueriesとか、いまの仕事で使う
 
       <section data-markdown class="left">
         <script type="text/template">
-ひとそれぞれいろんなことをやっている。
+ひとそれぞれ、いろんなことをやっている。
 
-それぞれ、必要になるHTML5の技術は違う。
+ひとそれぞれ、必要になるHTML5の技術は違う。
 
 自分のサイトで必要なことを考えてみた。
         </script>
@@ -875,26 +873,24 @@ HTML5のマークアップとか、MediaQueriesとか、いまの仕事で使う
         </script>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
-
-## The End
-### Thank you so mach.
-### <span class="yellow">It is not HTML5. but ...</span>
-
-**<a href="http://bit.ly/h5study36sadah" target="_blank">http://bit.ly/h5study36sadah</a>**
-
-**<a href="http://twitter.com/sada_h" target="_blank">@sada_h</a>**
-
-
-        </script>
+      <section data-state="lastSlide" class="last-slide">
+        <h2>The End</h2>
+        <strong>
+          <p><span class="yellow">It is not HTML5. but ...</span></p>
+          <p>Thank you so mach.</p>
+          <p><a href="http://bit.ly/h5study36sadah" target="_blank">http://bit.ly/h5study36sadah</a></p>
+          <p><a href="http://twitter.com/sada_h" target="_blank">@sada_h</a></p>
+        </strong>
+        <div class="last-cover"></div>
       </section>
-
     </div>
   </div>
+  <!-- for background image-->
+  <div id="bg"></div>
 
   <script src="lib/js/head.min.js"></script>
   <script src="js/reveal.min.js"></script>
+  <script src="js/jquery-1.8.2.min.js"></script>
   <script>
   // Full list of configuration options available here:
   // https://github.com/hakimel/reveal.js#configuration
@@ -921,6 +917,19 @@ HTML5のマークアップとか、MediaQueriesとか、いまの仕事で使う
     ]
   });
   </script>
+  <script>
+  $(function(){
+    Reveal.addEventListener( 'lastSlide', function() {
+      $("#bg").fadeIn(5000);
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        if($(event.currentSlide).data("state") != "lastSlide"){
+          $("#bg").fadeOut(1000);
+        }
+      } );
+    }, false );
+  })
+  </script>
+
   <!--
   <style>
     #comp{
