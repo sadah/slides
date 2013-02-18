@@ -121,7 +121,7 @@
     width:100%;
     height:100%;
     background-color:#fff;
-    opacity:0.5;
+    opacity:0.4;
   }
 
   #bg{
@@ -131,7 +131,7 @@
     top:0;
     width:100%;
     height:100%;
-    background: url(images/l1.jpg) no-repeat center center fixed;
+    background: url(images/l2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -400,18 +400,6 @@ transform / transition / animation はあまり使わないかも。
 
         </script>
       </section>
-
-      <section data-markdown>
-        <script type="text/template">
-## Check
-確認は、このあたりを使って。
-
-* <a href="http://www.browserstack.com/" target="_blank">BrowserStack</a>
-    * <a href="http://www.modern.ie/" target="_blank">modern.IE</a>
-* <a href="https://browserlab.adobe.com/ja-jp/" target="_blank">Adobe® BrowserLab</a>
-
-        </script>
-      </section>
 -->
 
       <section data-markdown>
@@ -455,6 +443,18 @@ bookmarklet とか、いろいろ。
 * <a href="http://lab.maltewassermann.com/viewport-resizer/" target="_blank">Viewport Resizer</a>
 * <a href="http://mattkersley.com/responsive/" target="_blank">Responsive Design Testing</a>
 * Spec : <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">Media Queries W3C REC</a>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+## Check
+確認は、このあたりを使って。
+
+* <a href="http://www.browserstack.com/" target="_blank">BrowserStack</a>
+    * <a href="http://www.modern.ie/" target="_blank">modern.IE</a>
+* <a href="https://browserlab.adobe.com/ja-jp/" target="_blank">Adobe® BrowserLab</a>
+
         </script>
       </section>
 
@@ -661,7 +661,8 @@ WebFont Loader 使いましょう。
 
 Navigation Timingとか。
 
-* <a href="http://www.w3.org/TR/navigation-timing/" target="_blank">Navigation Timing</a>
+* <a href="http://www.w3.org/TR/navigation-timing/" target="_blank">Navigation Timing (W3c REC)</a>
+* <a href="http://www.w3.org/TR/2013/WD-navigation-timing-2-20130131/" target="_blank">Navigation Timing 2</a>
 
 link prefetch とか script defer async とか。
 
@@ -681,10 +682,9 @@ data URL Scheme でリクエスト減らしたり。
 ## Performance
 HTTP1.1時代の高速化。たとえば…。
 
-* 小さくする。まとめる。
-    * minify / gzip
-* CDNを使う
+* minify / gzip
 * 接続するドメインを分散する
+* CDNを使う
 * とにかく <span class="red">Request</span> を減らす
 
  <small><a href="http://www.atmarkit.co.jp/fwcr/special/uxclip01/01.html" target="_blank">表示が速過ぎても、誰も文句は言いません ─ ＠IT</a></small>
@@ -725,9 +725,22 @@ HTML5じゃないけど、HTTP 2.0 とか SPDY とか。
       <section data-markdown>
         <script type="text/template">
 
-
 > 基本的には既存のHTTPを拡張しダウンロードの高速化を目指したプロトコルで、TLS接続の上にセッション層を追加し、単一のSPDYセッションで複数のリクエストを送受信することを可能にしている。<br>
 > <a href="http://ja.wikipedia.org/wiki/SPDY" target="_blank">SPDY - Wikipedia</a>
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+
+**Multiplexed streams**
+
+**Request prioritization**
+
+**HTTP header compression**
+
+ <small><a href="http://dev.chromium.org/spdy/spdy-whitepaper" target="_blank">SPDY: An experimental protocol for a faster web - The Chromium Projects</a></small>
 
         </script>
       </section>
@@ -747,7 +760,7 @@ SSLを使ったとしても<br>
 食べログのようにリクエストが多ければ<br>
 多重化した通信は効率的かもしれない。
 
-<a href="https://developers.google.com/speed/articles/spdy-for-mobile" target="_blank">SPDY Performance on Mobile Networks</a>
+<small><a href="https://developers.google.com/speed/articles/spdy-for-mobile" target="_blank">SPDY Performance on Mobile Networks</a></small>
 
         </script>
       </section>
@@ -755,8 +768,9 @@ SSLを使ったとしても<br>
       <section data-markdown>
         <script type="text/template">
 
-SPDYは万能じゃないけど<br>
-食べログに向いているかもしれない。
+もしかしたら<br>
+**<span class="yellow">食べログ</span>**には向いている<br>
+かもしれない。
 
         </script>
       </section>
@@ -764,7 +778,7 @@ SPDYは万能じゃないけど<br>
       <section data-markdown>
         <script type="text/template">
 
-CDN が SPDY or HTTP2.0 に<br>
+CDN が **<span class="blue">SPDY</span>** や **<span class="green">HTTP 2.0</span>** に<br>
 対応してくれれば、試しやすい。
 
         </script>
@@ -773,10 +787,11 @@ CDN が SPDY or HTTP2.0 に<br>
       <section data-markdown>
         <script type="text/template">
 
-**高速化の手法も、変わる。**
+**<span class="blue">高速化の手法も、変わる</span>**
 
         </script>
       </section>
+
 
 
       <section data-markdown class="left">
@@ -791,6 +806,14 @@ CDN が SPDY or HTTP2.0 に<br>
 自分のサイトの特性を考えて、メリットの大きいところから使う。
 
 使えるところから、使っていけばいい。
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+
+**2013年<br>Web開発の進化を探る<br>↑今日のテーマ**
 
         </script>
       </section>
@@ -826,7 +849,7 @@ CDN が SPDY or HTTP2.0 に<br>
       <section data-markdown>
         <script type="text/template">
 
-**<span class="blue">いろいろあったね。<br>おつかれちゃんです。</span>**
+**<span class="blue">いろいろあったね<br>おつかれちゃんです</span>**
 
         </script>
       </section>
@@ -845,7 +868,7 @@ CDN が SPDY or HTTP2.0 に<br>
       <section data-markdown class="left">
         <script type="text/template">
 
- 使うときはもちろん評価するけど<br>
+ 使うときは、もちろん評価するけど<br>
  こういう技術があるって知らないと試せない。
 
  メリットやデメリットも<br>
@@ -888,11 +911,11 @@ CDN が SPDY or HTTP2.0 に<br>
 
       <section data-markdown class="left">
         <script type="text/template">
-ひとそれぞれ、いろんなことをやっている。
+ひとそれぞれ**<span class="blue">いろんなこと</span>**やってる。
 
-ひとそれぞれ、必要になるHTML5の技術は違う。
+ひとそれぞれ必要な**<span class="yellow">HTML5の技術</span>**は違う。
 
-自分のサイトで必要なことを考えてみた。
+**<span class="green">自分に必要なこと</span>**を考えてみた。
         </script>
       </section>
 
