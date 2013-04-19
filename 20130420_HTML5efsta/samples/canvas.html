@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script>
+    $(function(){
+      $("#b").on("click",function(){
+        var ctx = $("#canvas-area")[0].getContext("2d");
+        // x, y, radius, startAngle, endAngle [, anticlockwise ] )
+        ctx.arc(200, 100, 50, 0, Math.PI*2, false);
+        ctx.stroke();
+      });
+    })
+  </script>
+  <style>
+    #canvas-area {
+      background: white;
+      border-radius: 4px;
+      border: 1px solid #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canvas</h1>
+  <canvas id="canvas-area" width="400" height="300"></canvas><br>
+  <button id="b">draw</button>
+</body>
+</html>

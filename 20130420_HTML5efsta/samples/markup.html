@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample: HTML5 fall back Sample</title>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="dist/html5shiv.js"></script>
+  <![endif]-->
+  <script>
+    elements = "abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video".split(" ");
+    for(var i=0; i<elements.length; i++){
+      document.createElement(elements[i]);
+    }
+  </script>
+</head>
+<body>
+<h1>Sample: HTML5 fall back Sample</h1>
+<p>please view source.</p>
+</body>
+</html>

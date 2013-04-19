@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample: WebStorage</title>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script>
+  $(function(){
+
+    $("#lsb").on("click",function(){
+      var text = $("#lstext").val();
+      localStorage.setItem("ls",text);
+    });
+
+    $("#lsgb").on("click",function(){
+      text = localStorage.getItem("ls");
+      alert(text);
+    });
+
+    $("#ssb").on("click",function(){
+      var text = $("#sstext").val();
+      sessionStorage.setItem("ss",text);
+    });
+
+    $("#ssgb").on("click",function(){
+      text = sessionStorage.getItem("ss");
+      alert(text);
+    });
+
+  })
+  </script>
+</head>
+<body>
+<h1>Sample: WebStorage</h1>
+<p>WebStorage Sample</p>
+<p>
+  <input type="text" name="" id="lstext">
+  <button id="lsb">save local storage</button>
+  <button id="lsgb">get local storage</button>
+</p>
+<p>
+  <input type="text" name="" id="sstext">
+  <button id="ssb">save session storage</button>
+  <button id="ssgb">get session storage</button>
+</p>
+</body>
+</html>
