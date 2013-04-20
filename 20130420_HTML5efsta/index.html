@@ -146,7 +146,10 @@
       <section data-markdown>
         <script type="text/template">
 
-# <span class="yellow"><small>Change HTML5 from Not HTML5.</small></span><br>HTML5ではないサイトをHTML5へ
+
+# <span class="yellow">HTML5</span>ではないサイトを<br><span class="yellow">HTML5</span>へ
+
+Change HTML5 from not HTML5.
 
 ### <small>エフスタ!!とHTML5とか勉強会 2013<br />2013/04/20</small>
 
@@ -273,14 +276,15 @@
         </script>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
+<!--
+<section data-markdown>
+  <script type="text/template">
 
 **たくさんある**
 
-        </script>
-      </section>
-
+  </script>
+</section>
+ -->
       <section data-markdown>
         <script type="text/template">
 
@@ -305,9 +309,7 @@ W3C勧告候補**
       <section data-markdown>
         <script type="text/template">
 
-**勧告候補になったし<br>
-<span class="green">そろそろ普通に<br>
-使っていきたい</span>**
+**そろそろ<span class="green">普通</span>に<br>使っていきたい**
 
         </script>
       </section>
@@ -377,6 +379,7 @@ cena では <a href="https://github.com/aFarkas/html5shiv" target="_blank">html5
         </script>
       </section>
 
+<!--
       <section data-markdown class="left">
         <script type="text/template">
 
@@ -394,6 +397,7 @@ Selectors APIはjQueryを使えば使ってる。
 
         </script>
       </section>
+ -->
 
       <section data-markdown class="left">
         <script type="text/template">
@@ -579,9 +583,11 @@ Specs
 
 静的なサイトにはいいかも。
 
-食べログのようなWebアプリケーションには向かないかも。cenaにはいいかも。
+食べログのようなWebアプリケーションには向かないかも。
 
 <span class="yellow">PCとスマホで利用シーンや必要な機能が異なる。</span>
+
+cenaにはいいかも。あとはスマートフォン向けとタブレット向けに作るとか。
 
         </script>
       </section>
@@ -696,28 +702,30 @@ Thanks komasshu !
     ctx.stroke();
 
 * <a href="http://sadah.github.io/slides/20130420_HTML5efsta/samples/canvas.html" target="_blank">Sample: Canvas</a>
-* <a href="http://sadah.github.io/slides/20130420_HTML5efsta/samples/getUserMedia.html" target="_blank">Sample: getUserMedia + Canvas + Video + data URL Scheme + FullScreen API</a>
 
         </script>
       </section>
 
+<!--
       <section data-markdown class="left">
-        <script type="text/template">
+              <script type="text/template">
 
-## Canvas + WebFonts
+      ## Canvas + WebFonts
 
-    ctx.fillStyle = "navy";
-    ctx.font = "72px 'Cabin Sketch', cursive";
-    ctx.fillText("WebFonts", 200 , 50);
+          ctx.fillStyle = "navy";
+          ctx.font = "72px 'Cabin Sketch', cursive";
+          ctx.fillText("WebFonts", 200 , 50);
 
-* <a href="http://sadah.github.io/slides/20130420_HTML5efsta/samples/webfonts_canvas.html" target="_blank">Sample: Canvas + WebFonts</a>
+      * <a href="http://sadah.github.io/slides/20130420_HTML5efsta/samples/webfonts_canvas.html" target="_blank">Sample: Canvas + WebFonts</a>
 
-CanvasでWebFontsも使える。
-WebFontsは、利用されるときにダウンロードされるので、なにもしないと最初の1回はフォントが適用されない。
+      CanvasでWebFontsも使える。
+      WebFontsは、利用されるときにダウンロードされるので、なにもしないと最初の1回はフォントが適用されない。
 
-        </script>
-      </section>
+              </script>
+            </section>
+       -->
 
+<!--
       <section data-markdown class="left">
         <script type="text/template">
 
@@ -770,7 +778,8 @@ History API(pjax) はgithubやflickrやfacebookで使われてる。
 
         </script>
       </section>
-
+ -->
+<!--
       <section data-markdown class="left">
         <script type="text/template">
 
@@ -781,7 +790,7 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
         </script>
       </section>
-
+ -->
       <section data-markdown class="left">
         <script type="text/template">
 
@@ -812,37 +821,15 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
 実用性はないけど、こんなことも。
 
-* <a href="samples/getUserMedia.html" target="_blank">Sample: Video + Canvas + data URL Scheme + FullScreen</a>
+* <a href="http://sadah.github.io/slides/20130420_HTML5efsta/samples/getUserMedia.html" target="_blank">Sample: getUserMedia + Canvas + Video + data URL Scheme + FullScreen API</a>
 
         </script>
       </section>
 
-      <section data-markdown class="left">
+      <section data-markdown>
         <script type="text/template">
 
-## まとめ
-
-フォールバックが面倒なものは、使わないほうが楽かも。勝手にフォールバックされるものはいいかも。
-
-直感的な処理ができるようなところは、使っていくといいのかも。
-
-Drag and Drop や Canvas の画像のトリミングとか。
-
-        </script>
-      </section>
-
-      <section data-markdown class="left">
-        <script type="text/template">
-
-## まとめ
-
-<span class="yellow">HTML5</span>(とか)、いろいろある。
-
-仕様が安定しているもの、そうじゃないもの。
-
-自分のサイトの特性を考えて、メリットの大きいところから使う。
-
-使えるところから、使っていけばいい。
+**<span class="blue">まとめ</span>**
 
         </script>
       </section>
@@ -856,17 +843,57 @@ Drag and Drop や Canvas の画像のトリミングとか。
 
 大きなリニューアルがあれば、一気に使ってもいい。
 
-使えそうなものが、ひとつでもあれば幸いです。
+        </script>
+      </section>
+
+      <section data-markdown class="left">
+        <script type="text/template">
+
+## まとめ
+
+フォールバックが大変なものは、使わないほうが楽かも。
+
+勝手にフォールバックされるものはいいかも。
+
+直感的な処理ができるようなところは、使っていくといいのかも。
+
 
         </script>
       </section>
+
+      <section data-markdown class="left">
+        <script type="text/template">
+
+## まとめ
+
+<span class="yellow">HTML5</span>(とか)、いろいろある。
+
+仕様が安定しているもの、そうじゃないもの。
+
+<span class="green">**自分のサイトの特性**</span>を考えて、メリットの大きいところから使う。
+
+**使えるところから、使えばいい。**
+
+        </script>
+      </section>
+
 
       <section data-markdown>
         <script type="text/template">
 
- すぐには必要ないかもしれない。
+ すぐには必要のない技術かもしれない。
 
- でもどんな技術か知っておくことは大切。
+ **どんな技術か知っておく**<br />ことは大切。
+
+        </script>
+      </section>
+
+      <section data-markdown class="left">
+        <script type="text/template">
+
+使うときは、もちろん評価するけど<br>こういう技術があるって知らないと試せない。
+
+メリットやデメリットも<br>ある程度は知っておくといいよね。
 
         </script>
       </section>
@@ -874,20 +901,9 @@ Drag and Drop や Canvas の画像のトリミングとか。
       <section data-markdown class="left">
         <script type="text/template">
 
- 使うときは、もちろん評価するけど<br>
- こういう技術があるって知らないと試せない。
-
- メリットやデメリットも<br>
- ある程度は知っておくといいよね。
-
-        </script>
-      </section>
-
-      <section data-markdown class="left">
-        <script type="text/template">
 ひとそれぞれ**<span class="blue">いろんなこと</span>**やってる。
 
-ひとそれぞれ必要な**<span class="yellow">HTML5の技術</span>**は違う。
+ひとそれぞれ**<span class="yellow">必要なHTML5の技術</span>**は違う。
 
 **<span class="green">自分に必要なこと</span>**を考えてみた。
         </script>
