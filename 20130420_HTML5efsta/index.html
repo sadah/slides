@@ -30,7 +30,7 @@
   <![endif]-->
   <style>
   html body {
-    background:url("images/gplaypattern.png");
+    background:url("images/whitediamond.png");
     background-repeat: repeat;
   }
 
@@ -153,7 +153,9 @@ Change HTML5 from not HTML5.
 
 ### <small>エフスタ!!とHTML5とか勉強会 2013<br />2013/04/20</small>
 
- <a href="http://sadah.github.io" target="_blank">ひらい さだあき</a> <a href="http://twitter.com/sada_h">@sada_h</a>
+<a href="http://sadah.github.io" target="_blank">ひらい さだあき</a> <a href="http://twitter.com/sada_h">@sada_h</a>
+
+<a href="http://bit.ly/html5efsta" target="_blank">http://bit.ly/html5efsta</a>
 
         </script>
       </section>
@@ -199,10 +201,10 @@ Change HTML5 from not HTML5.
 
 ## <span class="yellow">HTML5</span>
 <table>
-  <tr> <th>Year <th>Spec <th>Topic
-  <tr> <td>1993 <td>HTML 1.0<td>IEFT標準化
-  <tr> <td>1997 <td>HTML 3.2 <td>W3C勧告<br>W3Cではじめての勧告
-  <tr> <td>1997 <td>HTML 4.0 <td>W3C勧告
+  <tr> <th>Year <th>Spec      <th>Topic
+  <tr> <td>1993 <td>HTML 1.0  <td>IETF標準化
+  <tr> <td>1997 <td>HTML 3.2  <td>W3C勧告<br>W3Cではじめての勧告
+  <tr> <td>1997 <td>HTML 4.0  <td>W3C勧告
   <tr> <td>1999 <td>HTML 4.0.1<td>W3C勧告
   <tr> <td>2000 <td>XHTML 1.0 <td>W3C勧告<br>HTML 4.0.1をXMLで再定義
 </table>
@@ -216,12 +218,12 @@ Change HTML5 from not HTML5.
 ## <span class="yellow">HTML5</span>
 
 <table>
-  <tr> <th>Year <th>Spec <th>Topic
+  <tr> <th>Year <th>Spec      <th>Topic
   <tr> <td>2001 <td>XHTML 1.1 <td>W3C勧告 機能をモジュール化
-  <tr> <td>2007 <td>HTML5 <td>W3Cで検討開始(WG設立)
+  <tr> <td>2007 <td>HTML5     <td>W3Cで検討開始(WG設立)
   <tr> <td>2009 <td>XHTML 2.0 <td>XHTML2 WG 活動停止
-  <tr> <td>2011 <td>HTML5 <td>W3C 最終草案
-  <tr> <td>2012 <td>HTML5 <td>W3C 勧告候補 (2012/12/17)
+  <tr> <td>2011 <td>HTML5     <td>W3C 最終草案
+  <tr> <td>2012 <td>HTML5     <td>W3C 勧告候補 (2012/12/17)
 </table>
 
         </script>
@@ -249,6 +251,15 @@ Change HTML5 from not HTML5.
       <section data-markdown>
         <script type="text/template">
 
+## ウェブの進化
+<a href="http://evolutionofweb.appspot.com/" target="_blank">![ウェブの進化](images/evoweb.png)</a>
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+
 **<span class="blue">仕事をしながら、考えること</span>**
 
         </script>
@@ -267,24 +278,7 @@ Change HTML5 from not HTML5.
         </script>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
 
-## ウェブの進化
-<a href="http://evolutionofweb.appspot.com/" target="_blank">![ウェブの進化](images/evoweb.png)</a>
-
-        </script>
-      </section>
-
-<!--
-<section data-markdown>
-  <script type="text/template">
-
-**たくさんある**
-
-  </script>
-</section>
- -->
       <section data-markdown>
         <script type="text/template">
 
@@ -356,9 +350,9 @@ HTML5なマークアップはけっこう見かける。
 
 <a href="https://github.com/aFarkas/html5shiv" target="_blank">html5shiv</a> 使ったり、createElement したり。
 
-    <!--[if lt IE 9]>
+    [if lt IE 9]>
       <script src="dist/html5shiv.js"></script>
-    <![endif]-->
+    <![endif]
 
     elements = "abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video".split(" ");
     for(var i=0; i<elements.length; i++){
@@ -370,17 +364,58 @@ HTML5なマークアップはけっこう見かける。
         </script>
       </section>
 
-      <section data-markdown>
+      <section data-markdown class="left">
         <script type="text/template">
-## <span class="yellow">HTML5 Markup</span>
 
-cena では <a href="https://github.com/aFarkas/html5shiv" target="_blank">html5shiv</a>
+## <span class="yellow">HTML5への移行</span>
+
+<ul>
+  <li class="fragment roll-in">動いてるサイトなので、徐々にHTML5に移行中</li>
+  <li class="fragment roll-in">最初は doctylie を変えた</li>
+  <li class="fragment roll-in">次に html5shiv を組み込み</li>
+  <li class="fragment roll-in">新規作成するページのマークアップで、HTML5からの新要素の利用を開始</li>
+  <li class="fragment roll-in">共通部分(headerとか)のマークアップを修正</li>
+  <li class="fragment roll-in">いろいろなページを修正中</li>
+</ul>
 
         </script>
       </section>
 
-<!--
       <section data-markdown class="left">
+        <script type="text/template">
+## <span class="yellow">HTML5への移行</span>
+
+工夫したこと
+
+<ul>
+  <li class="fragment roll-in">まとまった時間はとれないので、いろいろ合間に作業をすすめる</li>
+  <li class="fragment roll-in">タスクを分割。何かあってもすぐに戻せるように</li>
+  <li class="fragment roll-in">Railsなので、共通したレイアウトの修正はかんたん</li>
+  <li class="fragment roll-in">jQueryのバージョンアップ作業と合わせてHTML5化を実施</li>
+  <li class="fragment roll-in">影響の少ないページから</li>
+</ul>
+
+        </script>
+      </section>
+
+      <section data-markdown class="left">
+        <script type="text/template">
+## <span class="yellow">HTML5への移行</span>
+
+なぜHTML5にしたのか
+
+<ul>
+  <li class="fragment roll-in">徐々に進めれば、あんまり大変じゃないとわかってた</li>
+  <li class="fragment roll-in">スマートフォンはHTML5だし、マークアップはできる人がいる</li>
+  <li class="fragment roll-in">実績を作れば、楽になる</li>
+  <li class="fragment roll-in">未来に技術的負債を残したくなかった</li>
+  <li class="fragment roll-in">なにより HTML5 が好きなので</li>
+</ul>
+
+        </script>
+      </section>
+
+<section data-markdown class="left">
         <script type="text/template">
 
 ## JavaScript
@@ -397,7 +432,6 @@ Selectors APIはjQueryを使えば使ってる。
 
         </script>
       </section>
- -->
 
       <section data-markdown class="left">
         <script type="text/template">
@@ -409,7 +443,9 @@ WebStorage は Google や twitter で使われてる。
 * <a href="http://www.google.co.jp/" target="_blank">Google</a>
 * <a href="http://www.w3.org/TR/webstorage/" target="_blank">Web Storage</a>
 
-普通のサイトではあまり見かけなかった。フォールバックがちょっと面倒なのかな？
+普通のサイトではあまり見かけなかった。
+
+フォールバックがちょっと面倒なのかな？
 
         </script>
       </section>
@@ -437,7 +473,6 @@ WebStorage は Google や twitter で使われてる。
 
         </script>
       </section>
-
 
       <section data-markdown>
         <script type="text/template">
@@ -510,7 +545,7 @@ Specs
         </script>
       </section>
 
-      <section data-markdown class="left">
+<section data-markdown class="left">
         <script type="text/template">
 ## CSS3 Backgrounds,Borders
 
@@ -568,11 +603,13 @@ Specs
         </script>
       </section>
 
-      <section data-markdown class="left">
+      <section data-markdown>
         <script type="text/template">
 ## MediaQueries
 
-僕のシンプルなサイトでさえ、確認が大変でちょっと泣けた。CSS力が低いせいだけど。
+僕のシンプルなサイトでさえ、確認が大変だった。
+
+CSS力が低いせいだけど。
 
         </script>
       </section>
@@ -583,11 +620,11 @@ Specs
 
 静的なサイトにはいいかも。
 
-食べログのようなWebアプリケーションには向かないかも。
+食べログのようなサイトには向かないかも。
 
 <span class="yellow">PCとスマホで利用シーンや必要な機能が異なる。</span>
 
-cenaにはいいかも。あとはスマートフォン向けとタブレット向けに作るとか。
+cenaにはいいかも。機能より閲覧が目的だから。
 
         </script>
       </section>
@@ -604,7 +641,7 @@ bookmarklet とか、いろいろ。
         </script>
       </section>
 
-      <section data-markdown>
+<section data-markdown>
         <script type="text/template">
 ## Check
 確認は、このあたりを使って。
@@ -685,13 +722,14 @@ Thanks komasshu !
 
 あとはプロフィール画像の切り出しとか。
 
-* <a href="https://maps.google.co.jp/maps?saddr=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C+%E9%8E%8C%E5%80%89%E9%A7%85&daddr=%E5%AE%AE%E5%B4%8E%E7%9C%8C+%E5%AE%AE%E5%B4%8E%E9%A7%85&ie=UTF8&dirflg=t&ttype=now&t=m&z=7&start=0&geocode=FffsGgId719RCCnfc08qwkUYYDEODvuEPjrpxw%3BFS_-5gEdYn7VBymJj9bEXLc4NTHEGuIFnPgASw&brcurrent=3,0x34674e0fd77f192f:0xf54275d47c665244,1" target="_blank">鎌倉から宮崎 / Google Maps</a>
+* <a href="https://maps.google.co.jp/maps?saddr=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C+%E9%8E%8C%E5%80%89%E9%A7%85&daddr=%E7%A6%8F%E5%B3%B6%E7%9C%8C+%E9%83%A1%E5%B1%B1%E9%A7%85" target="_blank">鎌倉から郡山 / Google Maps</a>
 * <a href="http://jp.wsj.com/public/npage/japan-market-data-center.html?mod=WSJJP_topnav_jp_market" target="_blank">マーケットデータ - WSJ日本版</a>
 * Spec : <a href="http://www.w3.org/TR/2dcontext/" target="_blank">HTML Canvas 2D Context</a>
 
         </script>
       </section>
 
+<!--
       <section data-markdown>
         <script type="text/template">
 ## Canvas
@@ -705,6 +743,7 @@ Thanks komasshu !
 
         </script>
       </section>
+ -->
 
 <!--
       <section data-markdown class="left">
@@ -839,24 +878,13 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
 ## まとめ
 
-ちょっとずつ使う。
+<span class="yellow">HTML5</span>、ちょっとずつ使う。
 
 大きなリニューアルがあれば、一気に使ってもいい。
 
-        </script>
-      </section>
-
-      <section data-markdown class="left">
-        <script type="text/template">
-
-## まとめ
-
-フォールバックが大変なものは、使わないほうが楽かも。
+フォールバックが大変なものは、使わないほうが楽かもしれない。
 
 勝手にフォールバックされるものはいいかも。
-
-直感的な処理ができるようなところは、使っていくといいのかも。
-
 
         </script>
       </section>
@@ -870,7 +898,7 @@ Drag and Drop(& File API) もいろいろ使われてました。
 
 仕様が安定しているもの、そうじゃないもの。
 
-<span class="green">**自分のサイトの特性**</span>を考えて、メリットの大きいところから使う。
+<span class="green">**自分のサイトの特性**</span>を考えて<br />メリットの大きいところから使う。
 
 **使えるところから、使えばいい。**
 
@@ -901,12 +929,11 @@ Drag and Drop(& File API) もいろいろ使われてました。
       <section data-markdown class="left">
         <script type="text/template">
 
-ひとそれぞれ**<span class="blue">いろんなこと</span>**やってる。
+<span class="fragment roll-in">ひとそれぞれ**<span class="blue">いろんなこと</span>**やってる。</span>
 
-ひとそれぞれ**<span class="yellow">必要なHTML5の技術</span>**は違う。
+<span class="fragment roll-in">ひとそれぞれ**<span class="yellow">必要なHTML5の技術</span>**は違う。</span>
 
-**<span class="green">自分に必要なこと</span>**を考えてみた。
-        </script>
+<span class="fragment roll-in">僕はまず**<span class="green">自分に必要なこと</span>**を考えてみた。</span>        </script>
       </section>
 
       <section data-markdown>
