@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>初めてのHTML5 - なにができるの？ / HTML5とか勉強会 for ビギナー (第2回)</title>
+  <meta name="description" content="初めてのHTML5 - なにができるの？ / HTML5とか勉強会 for ビギナー (第2回)">
+  <meta name="author" content="Sadaaki HIRAI">
+
+  <meta property='og:url' content='http://sadah.github.io/slides/20130724_HTML5Beginners/' />
+  <meta property='og:title' content='初めてのHTML5 - なにができるの？ / HTML5とか勉強会 for ビギナー (第2回)' />
+  <meta property='og:site_name' content='初めてのHTML5 - なにができるの？ / HTML5とか勉強会 for ビギナー (第2回)' />
+  <meta property='og:description' content='初めてのHTML5 - なにができるの？ / HTML5とか勉強会 for ビギナー (第2回)' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='http://sadah.github.io/slides/20130724_HTML5Beginners/images/top.jpg' />
+  <meta property='og:locale' content='ja_JP' />
+  <meta property="fb:admins" content="1704653307534" />
+
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <!--
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+  -->
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+  <!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+  <style>
+  .reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+    color: #555555;
+    font-family: "optima", "Belleza", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
+  }
+  .reveal h1 {
+    font-size: 2em;
+  }
+  .reveal h2 {
+    font-size: 1.6em;
+  }
+
+  .reveal section img {
+    border: 0px;
+  }
+
+  .reveal p, .reveal ol, .reveal ul {
+    line-height: 1.5;
+  }
+
+  .reveal table {
+    margin: auto;
+  }
+
+  .reveal .roll {
+    vertical-align: baseline;
+  }
+
+  .blue {
+    color: rgb(75,172,198);
+  }
+  .yellow {
+    color: rgb(247,150,70);
+  }
+  .green {
+    color: rgb(155,187,89);
+  }
+  .red {
+    color: rgb(220,80,77);
+  }
+  .black {
+    color: black;
+  }
+  .white {
+    color: white;
+  }
+  .pink {
+    color: #FF3399;
+  }
+
+
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-markdown
+      data-background="images/whitediamond.png"
+      data-background-size="128px"
+      data-background-repeat="repeat" >
+        <script type="text/template">
+# 初めての<span class="yellow">HTML5</span><br>なにができるの？
+
+### <small>第2回 HTML5とか勉強会 for ビギナー <br> 2013/07/24</small>
+
+<a href="http://sadah.github.io" target="_blank">ひらい さだあき</a> <a href="http://twitter.com/sada_h">@sada_h</a>
+
+<a href="http://bit.ly/b5j2_1" target="_blank">http://bit.ly/b5j2_1</a>
+        </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## ひらい さだあき
+
+* 鎌倉に住んでます。 Born in 1981.
+* <a href="http://sadah.github.io" target="_blank">sadah.github.io</a> / <a href="http://twitter.com/sada_h" target="_blank">@sada_h</a> / <a href="http://sadah.hatenablog.com/" target="_blank">console.blog(self);</a>
+* <a href="http://www.html5j.org" target="_blank">html5j</a> スタッフ / HTML5とか勉強会 スタッフ
+* <span class="red">Ruby</span> / <span class="red">Rails</span> / <spna class="yellow">HTML5</spna> / <span class="blue">JavaScript</span> / <spna class="green">Java</spna>
+* Kakaku.com, Inc. Engineer 2012/08〜
+    * <a href="http://tabelog.com/" target="_blank">グルメ・レストランガイド [食べログ]</a>
+    * <a href="http://yoyaku.tabelog.com/" target="_blank">レストラン予約サイト [cena(チェーナ)]</a>
+
+<a href="http://twitter.com/sada_h" target="_blank"><img src="images/profile.jpeg" alt="ひらい さだあき" style="max-width:80px;vertical-align:middle;" /></a>
+<a href="http://tabelog.com" target="_blank"><img src="images/tabelog.png" alt="食べログ" style="vertical-align:middle;" /></a>
+<a href="http://yoyaku.tabelog.com" target="_blank"><img src="images/cena.png" alt="レストラン予約サイト cena(チェーナ)" style="vertical-align:middle;background-color:#fff;" /></a>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+# Questions
+
+* みなさん、なにしてるひとですか？
+ * Web制作？ デザイナ？ エンジニア？ 学生？
+* HTML5使ったことある？
+* 勉強会とか来たことある？
+* html5jのML入ってる？
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+# Agenda
+
+1. Evolution of Web
+2. History of HTML
+3. W3C 仕様策定の流れ
+4. HTML5を使っているサイト
+5. まとめ
+
+      </script>
+    </section>
+
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+# Evolution of Web
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## ウェブの進化
+<a href="http://evolutionofweb.appspot.com/" target="_blank">![ウェブの進化](images/evoweb.png)</a>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+# History of <span class="yellow">HTML</span>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## <span class="yellow">History of HTML</span>
+
+<table>
+  <tr> <th>Year <th>Spec      <th>Topic
+  <tr> <td>1993 <td>HTML 1.0  <td>IETF標準化
+  <tr> <td>1997 <td>HTML 3.2  <td>W3C勧告<br>W3Cではじめての勧告
+  <tr> <td>1997 <td>HTML 4.0  <td>W3C勧告
+  <tr> <td>1999 <td>HTML 4.0.1<td>W3C勧告
+  <tr> <td>2000 <td>XHTML 1.0 <td>W3C勧告<br>HTML 4.0.1をXMLで再定義
+</table>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat">
+      <script type="text/template">
+
+## <span class="yellow">History of HTML</span>
+
+<table>
+  <tr> <th>Year <th>Spec      <th>Topic
+  <tr> <td>2001 <td>XHTML 1.1 <td>W3C勧告 機能をモジュール化
+  <tr> <td>2007 <td>HTML5     <td>W3Cで検討開始(WG設立)
+  <tr> <td>2009 <td>XHTML 2.0 <td>XHTML2 WG 活動停止
+  <tr> <td>2011 <td>HTML5     <td>W3C 最終草案
+  <tr> <td>2012 <td>HTML5     <td>W3C 勧告候補 (2012/12/17)
+  <tr> <td>2013 <td>HTML 5.1  <td>W3C WD (2013/05/28)
+</table>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+# W3C 仕様策定の流れ
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## W3C 仕様策定の流れ
+
+* 作業草稿（Working Draft, WD）<br>
+<span class="yellow">HTML 5.1 WD(<a href="http://www.w3.org/TR/2013/WD-html51-20130528/" target="_blank">2013/05/28</a>)</span>
+* 最終草案（Last Call Working Draft）
+* 勧告候補（Candidate Recommendation, CR）<br>
+<span class="yellow">HTML5 CR(<a href="http://www.w3.org/TR/2012/CR-html5-20121217/" target="_blank">2012/12/17</a>)</span>
+* 勧告案（Proposed Recommendation, PR）
+* W3C勧告（W3C Recommendation, REC）
+
+
+<small class='source'>
+  <a href="http://ja.wikipedia.org/wiki/World_Wide_Web_Consortium" target="_blank">World Wide Web Consortium - Wikipedia</a><br>
+  <a href="http://ja.wikipedia.org/wiki/W3C%E5%8B%A7%E5%91%8A" target="_blank">W3C勧告 - Wikipedia</a>
+</small>
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+# Sites using HTML5
+
+      </script>
+    </section>
+
+<!--
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5
+
+派手なデモとかは、前回の白石さんの資料を御覧ください。
+
+  <iframe src="http://www.slideshare.net/slideshow/embed_code/22718894" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+<small class='source'>
+  <strong> <a href="http://www.slideshare.net/shumpei/toka39" title="最近のHTML5はどうなってるのか" target="_blank">最近のHTML5はどうなってるのか</a> </strong> from <strong><a href="http://www.slideshare.net/shumpei" target="_blank">Shumpei Shiraishi</a></strong>
+</small>
+
+      </script>
+    </section>
+ -->
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Apple
+
+<a href="http://www.apple.com/" target="_blank">![Apple](images/apple.png)</a>
+
+<small class='source'>
+  <a href="http://www.apple.com/" target="_blank">Apple</a>
+</small>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Apple
+
+* HTML5 Markup
+* Custom Data Attribute
+* Role Attribute
+* CSS3
+* Web Storage
+* SVG
+* data URL
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Microsoft
+
+<a href="http://www.microsoft.com/ja-jp/default.aspx" target="_blank">![Microsoft Japan](images/ms.png)</a>
+
+<small class='source'>
+  <a href="http://www.microsoft.com/ja-jp/default.aspx" target="_blank">Microsoft Japan</a>
+</small>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Microsoft
+
+* HTML5 Markup
+* Custom Data Attribute
+* Role Attribute
+* CSS3
+* MediaQueries
+* WebFonts
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Tabelog
+
+<a href="http://tabelog.com/" target="_blank">![食べログ](images/tb.png)</a>
+
+<small class='source'>
+  <a href="http://tabelog.com/" target="_blank">食べログ</a>
+</small>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Tabelog
+
+* Rich Snippets(RDFa/Microdata)
+* Custom Data Attribute
+* CSS3
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+## Sites using HTML5 - Tabelog
+
+![食べログ](images/tb2.png)
+
+<small class='source'>
+  <a href="http://www.google.com/webmasters/tools/richsnippets?q=http%3A%2F%2Ftabelog.com%2Ftokyo%2FA1303%2FA130303%2F13036041%2F" target="_blank">Google Structured Data Testing Tool</a>
+</small>
+
+      </script>
+    </section>
+
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+# まとめ
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+HTML5やHTML5に関連した技術、いろいろある。
+
+すぐには必要のない技術かもしれない。
+
+**どんな技術があるか知っておく** ことは大切。
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+ところで
+
+<span class="fragment roll-in">僕も初心者だった。</span>
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+<span class="fragment roll-in">はじめて参加したHTML5とか勉強会は、2010年12月。
+
+<span class="fragment roll-in">それから1年くらい連続で参加して<br />毎回ブログを書いたり。
+
+<span class="fragment roll-in">LTの募集があったので、応募してLTしたり。
+
+<span class="fragment roll-in">HTML5が楽しかったので<br />仕事では使ってないけどいろいろ調べた。
+
+<span class="fragment roll-in">2012年1月から、html5jのスタッフに。
+
+<span class="fragment roll-in">いろんなところでプレゼンさせてもらったり<br />転職して自分のサービスをHTML5にしたり。
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/whitediamond.png"
+    data-background-size="128px"
+    data-background-repeat="repeat" >
+      <script type="text/template">
+
+いろんな技術があるから<br>興味の持てるものがあるんじゃないかな。
+
+      </script>
+    </section>
+
+    <section data-markdown
+    data-background="images/end.jpg"
+    data-background-transition="slide"
+    style="background: rgba(255,255,255,0.7)">
+      <script type="text/template">
+
+## The End
+
+Change <span class="yellow">HTML5</span> from Not HTML5.</p>
+
+Thank you so mach.
+
+<a href="http://bit.ly/b5j2_1" target="_blank">http://bit.ly/b5j2_1</a>
+
+<a href="http://twitter.com/sada_h" target="_blank">@sada_h</a>
+
+      </script>
+    </section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+    <!-- Everything below this point is unrelated to the slideshow -->
+
+<div class="share-reveal" style="display: none; position: absolute; bottom: 10px; left: 50%; margin-left: -225px; z-index: 20;">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/b5j2_1" data-text="初めてのHTML5 - なにができるの？ / 第2回 HTML5とか勉強会 for ビギナー" data-via="sada_h" data-lang="en" data-hashtags="html5j">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fsadah.github.io%2Fslides%2F20130724_HTML5Beginner%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=1066765213463188" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+  <a href="https://twitter.com/sada_h" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @sada_h</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+<script>
+  if( !navigator.userAgent.match( /iphone|ipod|android|ipad|blackberry/gi ) && !!document.querySelector ) {
+    document.querySelector( '.share-reveal' ).style.display = 'block';
+    document.querySelector( '.fork-reveal' ).style.display = 'block';
+  }
+</script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+      // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+</script>
+
+</body>
+</html>
