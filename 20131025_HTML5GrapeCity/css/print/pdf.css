@@ -12,7 +12,13 @@
    unnecessary background images from printing */
 
 * {
-	-webkit-print-color-adjust: exact;
+  background-image: none;
+}
+
+html,body {
+  -webkit-print-color-adjust: exact;
+  background:url("../../images/whitediamond.png") !important;
+  background-repeat: repeat !important;
 }
 
 body {
