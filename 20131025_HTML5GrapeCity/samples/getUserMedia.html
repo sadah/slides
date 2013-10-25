@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample: Video + Canvas + data URL Scheme + FullScreen</title>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <style type="text/css">
+    video {
+        display:none;
+    }
+    canvas {
+        cursor:pointer;
+        display:block;
+        float:left;
+        margin: 10px;
+    }
+    #info {
+        width: 800px;
+    }
+    #out {
+        width: 220px;
+        margin: 10px;
+    }
+    #out img{
+        width: 200px;
+    }
+  </style>
+  <script>
+  $(function(){
+    var v = $('#v')[0]; // video
+    var c = $('#c')[0]; // canvas
+    var ctx = c.getContext('2d');
+
+    // カメラからの入力をとってくる
+    navigator.webkitGetUserMedia(
+      { video: true, audio: true },
+      function(stream) {
+        // videoのsrcにカメラからのstreamを渡す
+        v.src = window.webkitURL.createObjectURL(stream);
+      },
+      function(error) {console.log(error);}
+    );
+
+    $('#v').on('play',function(){
+      // autoplayされたらvideoのサイズとcanvasのサイズをあわせる
+      c.width = v.videoWidth;
+      c.height = v.videoHeight;
+      // video canvasに描画する
+      doDraw(v, ctx);
+    });
+
+    $('#c').on("click", function(){
+      var strDataURI = c.toDataURL('image/jpeg');
+      $('#out').prepend("<div class='imgOut'>");
+      $('.imgOut').append(
+        $('<img />').attr("src",strDataURI)
+      );
+    });
+
+    $(document).on("click",".imgOut",function(){
+      if(this.webkitRequestFullScreen){
+        this.webkitRequestFullScreen()
+      }
+      if(this.mozRequestFullScreen){
+        this.mozRequestFullScreen()
+      }
+    });
+
+    function doDraw(video, context) {
+      // videoをcanvasに表示する。40msごとに再描画する。
+      window.setInterval(function() {
+        context.drawImage(video, 0, 0);
+      }, 40);
+    }
+  });
+
+  </script>
+</head>
+<body>
+  <h1>Sample: Video + Canvas + data URL Scheme + FullScreen</h1>
+  <div id="info">
+    <p>getUserMediaのサンプル。Chrome Only...</p>
+    <p>カメラがついていれば、映像がでてくるはず。映像をクリックすると、画面をキャプチャします。</p>
+    <p>
+    via. <br>
+    <a href="http://people.opera.com/danield/presentations/getusermedia/#1" target="_blank">getUserMedia の基本</a><br>
+    <a href="http://people.opera.com/danield/webapps/getusermedia/" target="_blank">HTML5 Camera (getUserMedia example)</a><br>
+    <a href="https://hacks.mozilla.org/2013/02/cross-browser-camera-capture-with-getusermediawebrtc/" target="_blank">Cross-browser camera capture with getUserMedia/WebRTC ✩ Mozilla Hacks</a>
+  </p>
+  </div>
+  <!-- video要素自体は display:none -->
+  <video id='v' autoplay></video>
+  <!-- 映像はcanvasで表示する -->
+  <canvas id='c'></canvas><br>
+  <div id='out'></div>
+</body>
+</html>
