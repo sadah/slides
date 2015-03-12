@@ -59,9 +59,6 @@
     text-transform: none;
     line-height: 1.5;
   }
-  .reveal .name{
-    font-family: "秀英明朝 M","HelveticaNeue-Light", "Helvetica Neue Light", "秀英明朝 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
-  }
 
   .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
     text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
@@ -158,10 +155,9 @@
 
 <small>第55回 HTML5とか勉強会 with Web 26th Anniversary 2015/03/12</small>
 
+<small><a href="http://bit.ly/20150312webfonts" target="_blank" class="name">http://bit.ly/20150312webfonts</a></small>
+
 <a href="http://sadah.github.io" target="_blank" class="name">ひらい さだあき</a>
-
-<a href="http://bit.ly/20150312webfonts" target="_blank" class="name">http://bit.ly/20150312webfonts</a>
-
 
         </script>
       </section>
@@ -222,7 +218,6 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
 <img src="images/cw1.png" alt="Canvas with Web Fonts using Font Loading Module">
 
 * <a href="examples/canvas_webfonts.html" target="_blank">Sample</a>
-
 
         </script>
       </section>
@@ -350,8 +345,8 @@ Browsers will download fonts file, but canvas is still renderd. So <span class="
 
 ## <span class="blue">Browsers</span>
 
-* Chrome is  41. OK!
-* Firefox is 36. OK!
+* Chrome is  41, OK!
+* Firefox is 36, OK!
     * Some patrs suppoted.
     * Set <span class="pink">layout.css.font-iloading-api.enabled</span> to true.
 * Polyfill <a href="https://github.com/bramstein/fontloader" target="_blank">bramstein/fontloader</a>
@@ -379,11 +374,11 @@ Browsers will download fonts file, but canvas is still renderd. So <span class="
 ## <span class="blue">document.fonts / FontFaceSet</span>
 
 * FontFaceSet.ready
-    * Promise<FontFaceSet>
+    * Promise < FontFaceSet >
 * FontFaceSet#check()
     * boolean
 * FontFaceSet#load()
-    * Promise<sequence<FontFace>>
+    * Promise < sequence < FontFace > >
 
         </script>
       </section>
@@ -428,9 +423,19 @@ Browsers will download fonts file, but canvas is still renderd. So <span class="
 
 ## <span class="blue">document.font.ready</span>
 
-    document.fonts.ready.then(function(fontFaceSet) {
-      console.log("document.fonts.ready()")
-    });
+    <style>
+      .lorem {
+        font-family: 'Lobster', cursive;
+        font-size: 2em;
+      }
+    </style>
+    <script>
+      document.fonts.ready.then(function() {
+        console.log("document.fonts.ready")
+      });
+    </ script>
+
+* <a href="examples/FontFaceSet_ready.html" target="_blank">Sample</a>
 
         </script>
       </section>
@@ -455,6 +460,9 @@ f.load().then(function (loadedFace) {
   document.querySelector(".lorem").style.fontFamily = "Lobster, serif";
 });
 ```
+
+* <a href="examples/FontFaceSet_load.html" target="_blank">Sample</a>
+
         </script>
       </section>
 
