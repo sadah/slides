@@ -136,7 +136,7 @@
   .reveal blockquote {
     width: 90%;
     text-align: left;
-    margin: 5%;
+    padding: 0 20px;
   }
 
   </style>
@@ -159,6 +159,9 @@
 <small>第55回 HTML5とか勉強会 with Web 26th Anniversary 2015/03/12</small>
 
 <a href="http://sadah.github.io" target="_blank" class="name">ひらい さだあき</a>
+
+<a href="http://bit.ly/20150312webfonts" target="_blank" class="name">http://bit.ly/20150312webfonts</a>
+
 
         </script>
       </section>
@@ -200,6 +203,10 @@
 ## FontLovers
 
 Webや紙で文字を使う人、作る人、読む人、フォントが好きなすべての人へ。
+
+* <a href="http://fontlovers.connpass.com/event/11652/" target="_blank">フォントもくもく会 #2 - connpass</a>
+* <a href="http://fontlovers.connpass.com/event/10314/" target="_blank">FontLovers #1 - connpass</a>
+* <a href="https://www.facebook.com/groups/383748361777095/" target="_blank">FontLovers</a>
 
         </script>
       </section>
@@ -269,11 +276,15 @@ Flash Of Invisible Text (FOIT)
 
 Use Font Loading Module
 
-    document.fonts.load("72px Monofett, sans-serif").then(drawText);
+```js
+document.fonts.load("72px Monofett, sans-serif").then(drawText);
+```
 
 Not use Font Loading Module
 
-    window.onload = drawText;
+```
+window.onload = drawText;
+```
 
         </script>
       </section>
@@ -281,7 +292,7 @@ Not use Font Loading Module
       <section data-markdown
         data-background="images/whitediamond.png"
         data-background-size="128px"
-        data-background-repeat="repeat" >
+        data-background-repeat="repeat">
         <script type="text/template">
 
 > The @font-face rule is designed to allow lazy loading of font resources that are only downloaded when used within a document.
@@ -294,7 +305,7 @@ Not use Font Loading Module
       <section data-markdown
         data-background="images/whitediamond.png"
         data-background-size="128px"
-        data-background-repeat="repeat" >
+        data-background-repeat="repeat" class="left">
         <script type="text/template">
 
 If you use WebFonts with canvas, it will occur Flash Of Unstyled Text (FOUT). Because WebFonts is lazy loading.
@@ -558,7 +569,7 @@ font-rendering: optional;
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Conclusion
+# Enjoy WebFonts!!
 
         </script>
       </section>
