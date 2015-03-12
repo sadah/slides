@@ -154,7 +154,7 @@
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# CSS Font Loading Module Level 3 とか
+# <span class="yellow">CSS Font Loading Module Level 3 とか</span>
 
 <small>第55回 HTML5とか勉強会 with Web 26th Anniversary 2015/03/12</small>
 
@@ -186,7 +186,7 @@
 
 <a href="http://goodpatch.com/" target="_blank"><img class="goodpatch-logo" src="images/Goodpatch_Frame_01.png" alt="Goodpatch inc." /></a>
 
-<span class="white">人々のハートを揺さぶるようなDesign & Productを生み出し、世界をより良い方向に前進させる。</span>
+<span class="white" style="font-size:90%">人々のハートを揺さぶるようなDesign & Productを生み出し、<br>世界をより良い方向に前進させる。</span>
 
 <span class="white hireing"><a href="https://www.wantedly.com/companies/goodpatch/projects" target="_blank">We are hiring!</a></span>
 
@@ -200,7 +200,7 @@
         data-background-repeat="repeat" >
         <script type="text/template">
 
-## FontLovers
+## <span class="pink">FontLovers</span>
 
 Webや紙で文字を使う人、作る人、読む人、フォントが好きなすべての人へ。
 
@@ -217,7 +217,7 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-## Font Loading Module
+## <span class="blue">Font Loading Module</span>
 
 <img src="images/cw1.png" alt="Canvas with Web Fonts using Font Loading Module">
 
@@ -233,7 +233,7 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-## not use Font Loading Module
+## <span class="blue">not use Font Loading Module</span>
 
 <img src="images/cw2.png" alt="Canvas with Web Fonts not using Font Loading Module">
 
@@ -248,7 +248,7 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Why?
+# <span class="yellow">Why?</span>
 
         </script>
       </section>
@@ -259,9 +259,9 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-Flash Of Unstyled Text (FOUT)
+<span class="red">Flash Of Unstyled Text (FOUT)</span>
 
-Flash Of Invisible Text (FOIT)
+<span class="red">Flash Of Invisible Text (FOIT)</span>
 
         </script>
       </section>
@@ -272,15 +272,15 @@ Flash Of Invisible Text (FOIT)
         data-background-repeat="repeat" >
         <script type="text/template">
 
-### Code
+## <span class="blue">Code</span>
 
-Use Font Loading Module
+### Use Font Loading Module
 
 ```js
 document.fonts.load("72px Monofett, sans-serif").then(drawText);
 ```
 
-Not use Font Loading Module
+### Not use Font Loading Module
 
 ```
 window.onload = drawText;
@@ -308,9 +308,9 @@ window.onload = drawText;
         data-background-repeat="repeat" class="left">
         <script type="text/template">
 
-If you use WebFonts with canvas, it will occur Flash Of Unstyled Text (FOUT). Because WebFonts is lazy loading.
+If you use WebFonts with canvas, it will occur <span class="red">Flash Of Unstyled Text (FOUT)</span>. Because <span class="yellow">WebFonts is lazy loading</span>.
 
-Browsers will download fonts file, but canvas is still renderd. So browsers can not apply WebFonts.
+Browsers will download fonts file, but canvas is still renderd. So <span class="red">browsers can not apply WebFonts</span>.
 
         </script>
       </section>
@@ -321,7 +321,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# CSS Font Loading Module Level 3
+## <span class="blue">CSS Font Loading Module Level 3</span>
 
 * <a href="http://dev.w3.org/csswg/css-font-loading/" target="_blank">CSS Font Loading Module Level 3 - Editor’s Draft</a>
 * <a href="http://www.w3.org/TR/2014/WD-css-font-loading-3-20140522/" target="_blank">CSS Font Loading Module Level 3 - W3C Last Call Working Draft, 22 May 2014</a>
@@ -348,11 +348,12 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Browsers
+## <span class="blue">Browsers</span>
 
-* Chrome, now 41. It's OK.
-* Firefox, now 36. It's OK.
-    * Some patrs suppoted, and set layout.css.font-iloading-api.enabled to true.
+* Chrome is  41. OK!
+* Firefox is 36. OK!
+    * Some patrs suppoted.
+    * Set <span class="pink">layout.css.font-iloading-api.enabled</span> to true.
 * Polyfill <a href="https://github.com/bramstein/fontloader" target="_blank">bramstein/fontloader</a>
 
         </script>
@@ -364,7 +365,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# document.fonts / FontFaceSet
+# <span class="blue">document.fonts / FontFaceSet</span>
 
         </script>
       </section>
@@ -375,7 +376,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# document.fonts / FontFaceSet
+## <span class="blue">document.fonts / FontFaceSet</span>
 
 * FontFaceSet.ready
     * Promise<FontFaceSet>
@@ -393,7 +394,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Events
+## <span class="blue">Events</span>
 
 |Event handler|Event handler event type|
 |:-------------:|:-----------:|
@@ -410,7 +411,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# FontFace
+## <span class="blue">FontFace</span>
 
 * FontFace#load()
     * Promise<FontFace>
@@ -425,7 +426,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# document.font.ready
+## <span class="blue">document.font.ready</span>
 
     document.fonts.ready.then(function(fontFaceSet) {
       console.log("document.fonts.ready()")
@@ -440,7 +441,7 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# FontFace#load
+## <span class="blue">FontFace#load</span>
 
 ```
 var f = new FontFace(
@@ -463,7 +464,7 @@ f.load().then(function (loadedFace) {
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Future
+# <span class="blue">Future</span>
 
         </script>
       </section>
@@ -491,7 +492,7 @@ f.load().then(function (loadedFace) {
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# font-rendering
+## <span class="blue">font-rendering</span>
 
 * <a href="https://github.com/KenjiBaheux/css-font-rendering" target="_blank">KenjiBaheux/css-font-rendering</a>
 * <a href="https://github.com/igrigorik/css-font-timeout" target="_blank">igrigorik/css-font-timeout</a>
@@ -506,7 +507,7 @@ f.load().then(function (loadedFace) {
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# font-rendering
+## <span class="blue">font-rendering</span>
 
 ```
 font-rendering: optional | swap | block | auto | [ [ block <timeout> ]? [ swap <timeout> ]? ]!
@@ -521,7 +522,7 @@ font-rendering: optional | swap | block | auto | [ [ block <timeout> ]? [ swap <
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# font-rendering
+## <span class="blue">font-rendering</span>
 
 ```
 font-rendering-block-timeout: 0s;
@@ -539,8 +540,6 @@ font-rendering: optional;
 
         </script>
       </section>
-
-
 
       <section data-markdown
         data-background="images/whitediamond.png"
@@ -561,15 +560,13 @@ font-rendering: optional;
         </script>
       </section>
 
-
-
       <section data-markdown
         data-background="images/whitediamond.png"
         data-background-size="128px"
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Enjoy WebFonts!!
+# <span class="pink">Enjoy WebFonts!!</span>
 
         </script>
       </section>
