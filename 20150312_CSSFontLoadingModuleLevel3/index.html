@@ -45,12 +45,22 @@
   <![endif]-->
 
   <style>
-  .reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+  .reveal {
     color: #555555;
-    font-family: "optima", "Belleza", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "秀英角ゴシック銀 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
     letter-spacing: 0em;
     text-transform: none;
     line-height: 1.5;
+  }
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+    color: #555555;
+    font-family: "optima", "秀英角ゴシック銀 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5;
+  }
+  .reveal .name{
+    font-family: "秀英明朝 M","HelveticaNeue-Light", "Helvetica Neue Light", "秀英明朝 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
   }
 
   .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
@@ -107,9 +117,26 @@
     background: rgba(255, 255, 255, 0);
     box-shadow: none;
   }
-  .reveal a:hover .goodpatch-logo{
+  .reveal a:hover .goodpatch-logo {
     background: rgba(255, 255, 255, 0);
     box-shadow: none;
+  }
+
+  .reveal .hireing a{
+    color: white;
+  }
+
+  .reveal .has-big-table table {
+    font-size: 70%;
+  }
+  .reveal .left p {
+    text-align: left;
+  }
+
+  .reveal blockquote {
+    width: 90%;
+    text-align: left;
+    margin: 5%;
   }
 
   </style>
@@ -131,7 +158,7 @@
 
 <small>第55回 HTML5とか勉強会 with Web 26th Anniversary 2015/03/12</small>
 
-<a href="http://sadah.github.io" target="_blank">ひらい さだあき</a>
+<a href="http://sadah.github.io" target="_blank" class="name">ひらい さだあき</a>
 
         </script>
       </section>
@@ -158,9 +185,7 @@
 
 <span class="white">人々のハートを揺さぶるようなDesign & Productを生み出し、世界をより良い方向に前進させる。</span>
 
-<span class="white"><a href="https://www.wantedly.com/companies/goodpatch/projects" target="_blank">We are hiring!</a></span>
-
-
+<span class="white hireing"><a href="https://www.wantedly.com/companies/goodpatch/projects" target="_blank">We are hiring!</a></span>
 
         </script>
       </section>
@@ -185,7 +210,11 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Canvas with Web Fonts using Font Loading Module
+## Font Loading Module
+
+<img src="images/cw1.png" alt="Canvas with Web Fonts using Font Loading Module">
+
+* <a href="examples/canvas_webfonts.html" target="_blank">Sample</a>
 
 
         </script>
@@ -197,7 +226,11 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# Canvas with Web Fonts not using Font Loading Module
+## not use Font Loading Module
+
+<img src="images/cw2.png" alt="Canvas with Web Fonts not using Font Loading Module">
+
+* <a href="examples/canvas_webfonts_not_work.html" target="_blank">Sample</a>
 
         </script>
       </section>
@@ -208,7 +241,7 @@ Webや紙で文字を使う人、作る人、読む人、フォントが好き�
         data-background-repeat="repeat" >
         <script type="text/template">
 
-# ？
+# Why?
 
         </script>
       </section>
@@ -304,15 +337,12 @@ Browsers will download fonts file, but canvas is still renderd. So browsers can 
         data-background-repeat="repeat" >
         <script type="text/template">
 
-Chrome, now 41. It's OK.
+# Browsers
 
-Firefox, now It's OK(some patrs, and set layout.css.font-iloading-api.enabled to true.
-
+* Chrome, now 41. It's OK.
+* Firefox, now 36. It's OK.
+    * Some patrs suppoted, and set layout.css.font-iloading-api.enabled to true.
 * Polyfill <a href="https://github.com/bramstein/fontloader" target="_blank">bramstein/fontloader</a>
-
-> Added support for the CSS Font Loading API
->
-> <a href="https://www.mozilla.org/en-US/firefox/35.0/releasenotes/" target="_blank">Firefox — Notes (35.0) — Mozilla</a>
 
         </script>
       </section>
@@ -430,12 +460,13 @@ f.load().then(function (loadedFace) {
       <section data-markdown
         data-background="images/whitediamond.png"
         data-background-size="128px"
-        data-background-repeat="repeat" >
+        data-background-repeat="repeat"
+        class="has-big-table">
         <script type="text/template">
 
 | |  IE9 | IE10  | IE11  | Chrome  | Firefox | Safari  | Opera |
 |---|---|---|---|---|---|---|
-| font | rendering | FOUT | FOUT | FOUT | FOIT | FOIT | FOIT | FOIT |
+| font rendering | FOUT | FOUT | FOUT | FOIT | FOIT | FOIT | FOIT |
 | timeout | n/a | n/a | n/a | 3 sec. | 3 sec. | ∞ | 3 sec. |
 
 * <a href="https://dev.opera.com/articles/state-of-web-type/" target="_blank">Dev.Opera — The State of Web Type</a>
@@ -538,6 +569,7 @@ font-rendering: optional;
 
   <script src="lib/js/head.min.js"></script>
   <script src="js/reveal.js"></script>
+  <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?MZLWOeQMEGc%3D&aa=1" charset="utf-8"></script>
 
   <script>
 
@@ -549,7 +581,7 @@ font-rendering: optional;
       history: true,
       center: true,
 
-      transition: 'fade', // none/fade/slide/convex/concave/zoom
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
 
       // Optional reveal.js plugins
       dependencies: [
