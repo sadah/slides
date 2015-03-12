@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta charset="utf-8">
+  <title>CSS Font Loading Module Level 3 とか</title>
+  <meta name="description" content="CSS Font Loading Module Level 3 とか">
+  <meta name="author" content="Sadaaki HIRAI">
+
+  <meta property='og:url' content='http://sadah.github.io/slides/20150312_CSSFontLoadingModuleLevel3/' />
+  <meta property='og:title' content='CSS Font Loading Module Level 3 とか' />
+  <meta property='og:site_name' content='CSS Font Loading Module Level 3 とか' />
+  <meta property='og:description' content='CSS Font Loading Module Level 3 とか' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='http://sadah.github.io/slides/20150312_CSSFontLoadingModuleLevel3/images/top.png' />
+  <meta property='og:locale' content='ja_JP' />
+  <meta property="fb:admins" content="1704653307534" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+  <style>
+  .reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6{
+    color: #555555;
+    font-family: "optima", "Belleza", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
+  }
+  .reveal h1 {
+    font-size: 2em;
+  }
+  .reveal h2 {
+    font-size: 1.6em;
+  }
+
+  .reveal section img {
+    border: 0px;
+  }
+
+  .reveal p, .reveal ol, .reveal ul {
+    line-height: 1.5;
+  }
+
+  .reveal table {
+    margin: auto;
+  }
+
+  .reveal .roll {
+    vertical-align: baseline;
+  }
+
+  .blue {
+    color: rgb(75,172,198);
+  }
+  .yellow {
+    color: rgb(247,150,70);
+  }
+  .green {
+    color: rgb(155,187,89);
+  }
+  .red {
+    color: rgb(220,80,77);
+  }
+  .purple {
+    color: purple;
+  }
+  .black {
+    color: black;
+  }
+  .white {
+    color: white;
+  }
+  .pink {
+    color: #FF3399;
+  }
+  .reveal .goodpatch-logo{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+  }
+  .reveal a:hover .goodpatch-logo{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# CSS Font Loading Module Level 3 とか
+
+<small>第55回 HTML5とか勉強会 with Web 26th Anniversary 2015/03/12</small>
+
+<a href="http://sadah.github.io" target="_blank">ひらい さだあき</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+## <span class="blue">ひらい さだあき / Sadaaki HIRAI</span>
+
+* <a href="http://sadah.github.io" target="_blank">sadah.github.io</a> / <a href="http://twitter.com/sada_h" target="_blank">@sada_h</a> / <a href="http://sadah.hatenablog.com/" target="_blank">console.blog(self);</a>
+* A staff of <a href="http://www.html5j.org" target="_blank">html5j</a> and HTML5とか勉強会
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background-color="#187fc4">
+        <script type="text/template">
+
+<a href="http://goodpatch.com/" target="_blank"><img class="goodpatch-logo" src="images/Goodpatch_Frame_01.png" alt="Goodpatch inc." /></a>
+
+<span class="white">人々のハートを揺さぶるようなDesign & Productを生み出し、世界をより良い方向に前進させる。</span>
+
+<span class="white"><a href="https://www.wantedly.com/companies/goodpatch/projects" target="_blank">We are hiring!</a></span>
+
+
+
+        </script>
+      </section>
+
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+## FontLovers
+
+Webや紙で文字を使う人、作る人、読む人、フォントが好きなすべての人へ。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# Canvas with Web Fonts using Font Loading Module
+
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# Canvas with Web Fonts not using Font Loading Module
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# ？
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+Flash Of Unstyled Text (FOUT)
+
+Flash Of Invisible Text (FOIT)
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+### Code
+
+Use Font Loading Module
+
+    document.fonts.load("72px Monofett, sans-serif").then(drawText);
+
+Not use Font Loading Module
+
+    window.onload = drawText;
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+> The @font-face rule is designed to allow lazy loading of font resources that are only downloaded when used within a document.
+>
+> <a href="http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/#font-face-loading" target="_blank">4.8 Font loading guidelines - CSS Fonts Module Level 3</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+If you use WebFonts with canvas, it will occur Flash Of Unstyled Text (FOUT). Because WebFonts is lazy loading.
+
+Browsers will download fonts file, but canvas is still renderd. So browsers can not apply WebFonts.
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# CSS Font Loading Module Level 3
+
+* <a href="http://dev.w3.org/csswg/css-font-loading/" target="_blank">CSS Font Loading Module Level 3 - Editor’s Draft</a>
+* <a href="http://www.w3.org/TR/2014/WD-css-font-loading-3-20140522/" target="_blank">CSS Font Loading Module Level 3 - W3C Last Call Working Draft, 22 May 2014</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+> This CSS module describes events and interfaces used for dynamically loading font resources.
+>
+> * <a href="http://dev.w3.org/csswg/css-font-loading/" target="_blank">CSS Font Loading Module Level 3 - Editor’s Draft</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+Chrome, now 41. It's OK.
+
+Firefox, now It's OK(some patrs, and set layout.css.font-iloading-api.enabled to true.
+
+* Polyfill <a href="https://github.com/bramstein/fontloader" target="_blank">bramstein/fontloader</a>
+
+> Added support for the CSS Font Loading API
+>
+> <a href="https://www.mozilla.org/en-US/firefox/35.0/releasenotes/" target="_blank">Firefox — Notes (35.0) — Mozilla</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# document.fonts / FontFaceSet
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# document.fonts / FontFaceSet
+
+* FontFaceSet.ready
+    * Promise<FontFaceSet>
+* FontFaceSet#check()
+    * boolean
+* FontFaceSet#load()
+    * Promise<sequence<FontFace>>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# Events
+
+|Event handler|Event handler event type|
+|:-------------:|:-----------:|
+|onloading|loading|
+|onloadingdone|loadingdone|
+|onloadingerror|loadingerror|
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# FontFace
+
+* FontFace#load()
+    * Promise<FontFace>
+
+        </script>
+      </section>
+
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# document.font.ready
+
+    document.fonts.ready.then(function(fontFaceSet) {
+      console.log("document.fonts.ready()")
+    });
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# FontFace#load
+
+```
+var f = new FontFace(
+  "Lobster",
+  "url(http://fonts.gstatic.com/s/lobster/v9/NIaFDq6p6eLpSvtV2DTNDQLUuEpTyoUstqEm5AMlJo4.woff)",
+  {}
+ );
+
+f.load().then(function (loadedFace) {
+  document.fonts.add(loadedFace);
+  document.querySelector(".lorem").style.fontFamily = "Lobster, serif";
+});
+```
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# Future
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+| |  IE9 | IE10  | IE11  | Chrome  | Firefox | Safari  | Opera |
+|---|---|---|---|---|---|---|
+| font | rendering | FOUT | FOUT | FOUT | FOIT | FOIT | FOIT | FOIT |
+| timeout | n/a | n/a | n/a | 3 sec. | 3 sec. | ∞ | 3 sec. |
+
+* <a href="https://dev.opera.com/articles/state-of-web-type/" target="_blank">Dev.Opera — The State of Web Type</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# font-rendering
+
+* <a href="https://github.com/KenjiBaheux/css-font-rendering" target="_blank">KenjiBaheux/css-font-rendering</a>
+* <a href="https://github.com/igrigorik/css-font-timeout" target="_blank">igrigorik/css-font-timeout</a>
+* <a href="http://lists.w3.org/Archives/Public/www-style/2014Oct/0434.html" target="_blank">[css-fonts] Proposal for standardizing font timeout behavior from Tab Atkins Jr. on 2014-10-24 (www-style@w3.org from October 2014)</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# font-rendering
+
+```
+font-rendering: optional | swap | block | auto | [ [ block <timeout> ]? [ swap <timeout> ]? ]!
+```
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# font-rendering
+
+```
+font-rendering-block-timeout: 0s;
+font-rendering-swap-timeout: 0s;
+
+/* or for short */
+font-rendering: block 0s swap 0s;
+
+/* or slightly shorter */
+font-rendering: swap 0s; /* omitting block is equivalent to block 0s */
+
+/* or even shorter */
+font-rendering: optional;
+```
+
+        </script>
+      </section>
+
+
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+
+> font-rendering works together with Font Loading API:
+>
+> * FL initiates early fetch
+> * font-rendering tells the browser which rendering strategy it should apply
+>
+> when its ready to paint+layout (depending on current state of font fetch)
+>
+> http://lists.w3.org/Archives/Public/www-style/2014Oct/0522.html
+
+        </script>
+      </section>
+
+
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# Conclusion
+
+        </script>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+
+  </script>
+
+</body>
+</html>
