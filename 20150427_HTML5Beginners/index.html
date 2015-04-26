@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Career and html5j</title>
+  <meta name="description" content="Career and html5j">
+  <meta name="author" content="Sadaaki HIRAI">
+
+  <meta property='og:url' content='http://sadah.github.io/slides/20150427_HTML5Beginners/' />
+  <meta property='og:title' content='Career and html5j' />
+  <meta property='og:site_name' content='Career and html5j' />
+  <meta property='og:description' content='Career and html5j' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='http://sadah.github.io/slides/20150427_HTML5Beginners/images/top.png' />
+  <meta property='og:locale' content='ja_JP' />
+  <meta property="fb:admins" content="1704653307534" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+  <style>
+  .reveal {
+    color: #555555;
+    font-family: "optima", "秀英角ゴシック銀 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5;
+  }
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal .large-text {
+    color: #555555;
+    font-family: "optima", "秀英角ゴシック銀 L", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", Verdana, Arial, sans-serif;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
+  }
+  .reveal h1 {
+    font-size: 2em;
+  }
+  .reveal h2 {
+    font-size: 1.6em;
+  }
+
+  .reveal section img {
+    border: 0px;
+  }
+
+  .reveal p, .reveal ol, .reveal ul {
+    line-height: 1.5;
+  }
+
+  .reveal table {
+    margin: auto;
+  }
+
+  .reveal .roll {
+    vertical-align: baseline;
+  }
+
+  .blue {
+    color: rgb(75,172,198);
+  }
+  .yellow {
+    color: rgb(247,150,70);
+  }
+  .green {
+    color: rgb(155,187,89);
+  }
+  .red {
+    color: rgb(220,80,77);
+  }
+  .purple {
+    color: purple;
+  }
+  .black {
+    color: black;
+  }
+  .white {
+    color: white;
+  }
+  .pink {
+    color: #FF3399;
+  }
+  .reveal .goodpatch-logo{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+  }
+  .reveal a:hover .goodpatch-logo {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+  }
+
+  .reveal .hireing a{
+    color: white;
+  }
+
+  .reveal .has-big-table table {
+    font-size: 70%;
+  }
+
+  .reveal .large-text {
+    font-size: 1.8em;
+  }
+
+  .reveal .left p {
+    text-align: left;
+  }
+
+  .reveal blockquote {
+    width: 90%;
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# <span class="green">Career</span> <span class="blue">and</span> <span class="yellow">html5j</span>
+
+<small>第10回HTML5ビギナーズ 2015/04/27</small>
+
+<small><a href="http://bit.ly/20150427html5j" target="_blank" class="name">http://bit.ly/20150427html5j</a></small>
+
+<a href="http://sadah.github.io" target="_blank" class="name">ひらい さだあき</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="blue">Profile</span>
+
+## ひらい さだあき / Sadaaki HIRAI
+
+* <a href="http://sadah.github.io" target="_blank">sadah.github.io</a> / <a href="http://twitter.com/sada_h" target="_blank">@sada_h</a> / <a href="http://sadah.hatenablog.com/" target="_blank">console.blog(self);</a>
+* A staff of <a href="http://www.html5j.org" target="_blank">html5j</a> and HTML5とか勉強会
+* <span class="red">Ruby</span> / <span class="red">Rails</span> / <span class="yellow">HTML5</span> / <span class="blue">JavaScript</span> / <spna class="green">Java</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+## <span class="green">timeline</span>
+
+|year|age|about|
+|:---:|:---:|:---|
+|2004|22歳|SIerに就職|
+|2006|25歳|勉強会行ったり、技術系のblog書いたり|
+|2011|30歳|勉強会行ったり<br/>いろいろ発表したり、記事書いたり|
+|2012|31歳|html5jスタッフ / 食べログに転職|
+|2015|33歳|Goodpatchに転職|
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="green">university</span>
+
+* 理工学部経営工学科
+* 授業でJavaとか書いたり
+* HTMLとCSSもたまに書いたり
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="green">SIer</span>
+
+* 入社当時(2004年)
+    * 社員が3,000人くらい、売上が1,200億くらい
+* 流通系システムの担当から、社内の技術統括部門
+* インフラ(サーバ構築、ミドルウェア構築)
+* Javaシステム開発
+* トラブルシューティング / パフォーマンスチューニング
+* 9年くらい勤めた。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="yellow">食べログ</span>
+
+* カカクコム
+* 入社当時(2012年)
+    * 社員が500人くらい、売上が200億くらい
+* インターネット予約サービス
+* Ruby / Rails / JavaScript / HTML5
+* 2年半弱
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background-color="#187fc4">
+        <script type="text/template">
+
+<a href="http://goodpatch.com/" target="_blank"><img class="goodpatch-logo" src="images/Goodpatch_Frame_01.png" alt="Goodpatch inc." /></a>
+
+<span class="white" style="font-size:90%">人々のハートを揺さぶるようなDesign & Productを生み出し、<br>世界をより良い方向に前進させる。</span>
+
+<span class="white hireing"><a href="https://www.wantedly.com/companies/goodpatch/projects" target="_blank">We are hiring!</a></span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="blue">Goodpatch</span>
+
+* 2015/01から現職
+* 入社当時(2015/01)
+    * 社員50名くらい
+* Prott
+    * プロトタイピングツールの自社サービス
+    * Prottチームのエンジニアリーダー
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="green">Comunitee</span>
+
+* <span class="yellow">html5j</span>
+    * 2012/01からスタッフ
+* <span class="pink">FontLovers</span>
+    * Webや紙で文字を使う人、作る人、読む人、フォントが好きなすべての人へ。
+    * <a href="https://www.facebook.com/groups/383748361777095/" target="_blank">FontLovers Facebook Group</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text left">
+        <script type="text/template">
+
+<span class="blue">Goodpatch</span>に転職する気は<br/>
+あまりなかった。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text left">
+        <script type="text/template">
+
+<span class="blue">Goodpatch</span>に友達がいて<br/>
+遊びにいって話を聞いた。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text left">
+        <script type="text/template">
+
+その友達とは<br/>
+<span class="yellow">HTML5 Conference 2013</span>で<br/>
+知り合った。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text left">
+        <script type="text/template">
+
+その友達がいなかったら<br/>
+<span class="blue">Goodpatch</span>に転職しなかった。たぶん。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+なぜ<span class="yellow">食べログ</span>から<span class="blue">Goodpatch</span>に転職したのか？
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+<span class="red">マネージメント</span>ばかりになったから。<br/>
+もっとコードが書きたかったから。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text left">
+        <script type="text/template">
+
+ところが<br>
+いまもマネージメントばかり。
+<span class="fragment">でも<span class="pink">楽しい</span>。</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text">
+        <script type="text/template">
+
+なぜ<span class="pink">楽しく</span>感じるのか？
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+いまは<span class="red">マネージメント</span>が多いけど<br>
+またコードも書ける環境だから。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text">
+        <script type="text/template">
+
+<span class="blue">選択肢</span>が多い。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="green">キャリア</span>と<span class="blue">スキル</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+## <span class="green">ロール</span>
+
+* <span class="blue">フロントエンドエンジニア</span>
+* <span class="pink">サーバサイドエンジニア</span>
+* <span class="purple">インフラエンジニア</span>
+* <span class="red">プロジェクトマネージャー</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left">
+        <script type="text/template">
+
+いまの会社は規模が小さく人が足りない分、<br>いろいろな<span class="green">ポジション</span>がある。
+
+頑張れば、どれにでもなれる<span class="pink">基礎技術</span>がある。たぶん。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+## <span class="green">キャリアとスキル 参考資料</span>
+
+* <a href="http://www.slideshare.net/hysmrk/web-16937428" target="_blank">中堅Webクリエイティブ職のキャリアを考える（序章）</a>
+* <a href="http://www.slideshare.net/hysmrk/web-17096131" target="_blank">中堅Webクリエイティブ職のキャリアを考える（希望編）</a>
+* <a href="http://www.slideshare.net/hysmrk/web-17218773" target="_blank">中堅Webクリエイティブ職のキャリアを考える（条件と市場性編）</a>
+* <a href="http://www.slideshare.net/hysmrk/ss-44126400" target="_blank">Web制作者に向けた学習セルフマネジメントのすすめ（現状を把握する）</a>
+* <a href="http://www.slideshare.net/hysmrk/201502042" target="_blank">Web制作者に向けた学習セルフマネジメントのすすめ（経験学習サイクルをまわす）</a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-transition="fade"
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left" >
+        <script type="text/template">
+
+もともと…
+
+<span class="fragment"><span class="blue">Java</span>を書きたかったけどそういった部署ではなかった。</span>
+
+<span class="fragment"><span class="red">Ruby</span>や<span class="red">Rails</span>を使っていたわけではなかった。</span>
+
+<span class="fragment">仕事で<span class="yellow">HTML5</span>を使っていたわけではなかった。</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-transition="fade"
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text">
+        <script type="text/template">
+
+でも<span class="pink">楽しい</span>から勉強した。
+
+それを<span class="blue">アウトプット</span>した。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat">
+        <script type="text/template">
+
+# <span class="green">まとめ</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+長期的展望
+
+<span class="fragment roll-in red">ほとんどない</span>
+
+<span class="fragment roll-in">3年後のこと</span>
+
+<span class="fragment roll-in red">よくわからない</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4902516322/stfila-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51Se%2BEivOLL.jpg" alt="新装版 ほぼ日の就職論「はたらきたい。」 (ほぼ日ブックス)" style="border: none;" /></a>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+> キーワードは「大切にしているものは、何ですか？」
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text">
+        <script type="text/template">
+
+変化に対応していきたい
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+<blockquote>
+<p>「やるんだけど、心の準備がまだできない」</p>
+<p><small>言い訳ともつかず茉莉がつぶやくと、惣一郎はひっそりと笑った。</small></p>
+<p>「でもね、物事には準備する時間は与えられてないんだ」</p>
+<p><small>それだけ言って、茉莉をそこに残し、一人で土手を滑り降りてしまった。</small></p>
+<p><small>左岸: 江國 香織</small></p>
+</blockquote>
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left">
+        <script type="text/template">
+
+Webに関する技術の多様化、細分化、専門化
+
+<span class="fragment roll-in">つらい…。</span>
+<span class="fragment roll-in">ただ僕も **<span class="green">初心者</span>** だった。</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-transition="fade"
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="large-text">
+        <script type="text/template">
+
+<span class="yellow">html5j</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-transition="fade"
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left">
+        <script type="text/template">
+
+はじめて参加した<span class="yellow">HTML5とか勉強会</span>は2010年12月だった。
+
+<span class="fragment">毎回参加して、毎回ブログを書いた。</span>
+
+<span class="fragment">Chrome Extension作ったり。</span>
+
+<span class="fragment">Lightning Talkの募集があったので、はじめて登壇したり。</span>
+
+<span class="fragment">LTがきっかけで@ITで記事を書いたり。</span>
+
+<span class="fragment">そんなことしていたら、スタッフにならない？と声をかけてもらった。</span>
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left">
+        <script type="text/template">
+
+転職しなくてもできることはあるはず。
+
+ただ転職がリスクなのか、チャンスなのかは考えたほうがいいかも。年齢も関係してくる。
+
+アウトプット、とにかく大事。blogでも、GitHubでも、Qiitaでもいい。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-transition="fade"
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat"
+        class="left">
+        <script type="text/template">
+
+Webまわり、HTML5とかJavaScriptとか<br>
+いろんな技術があるから、すぐに使うものじゃなくても<br>
+**<span class="blue">興味の持てるもの</span>** があるんじゃないかな。
+
+        </script>
+      </section>
+
+      <section data-markdown
+        data-background="images/whitediamond.png"
+        data-background-size="128px"
+        data-background-repeat="repeat" >
+        <script type="text/template">
+
+# <span class="pink">Enjoy your career!!</span>
+
+        </script>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?MZLWOeQMEGc%3D&aa=1" charset="utf-8"></script>
+
+  <script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+
+  </script>
+
+</body>
+</html>
